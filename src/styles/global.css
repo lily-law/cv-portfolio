@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+}
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --grey-xxl: #E4E4E4;
+    --grey-xl: #B7B7B7;
+    --grey-l: #A6A6A6;
+    --grey-m: #737373;
+    --grey-d: #505050;
+    --grey-xd: #464646;
+    --blue-d: #000033;
+    --blue-l: #99CCFF;
+    --flow-font-family: gill-sans-nova, sans-serif;
+    --point-font-family: odile, serif;
+    --logic-font-family: t26-carbon, monospace;
+}
