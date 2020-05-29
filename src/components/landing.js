@@ -17,7 +17,7 @@ const Landing = () => (<Fragment>
           {/* TODO <Links /> */}
         </section>
       </div>
-      <svg className="background" xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720">
+      <svg className="background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720">
         <g transform="translate(-207 -8)">
             <g transform="translate(387 188)">
                 <g transform="translate(0 0)" fill="#737373">
@@ -77,7 +77,7 @@ const Landing = () => (<Fragment>
     }
     nav {
         position: relative;
-        width: 100vw;
+        width: 100%;
         height: 100vh;
         transform: rotate(${/*connectup rotation*/'0deg'});
     }
@@ -156,6 +156,7 @@ const Landing = () => (<Fragment>
         grid-area: portfolio;
         width: 30vh;
         margin-left: -14vh;
+        fill: var(--grey-l);
     }
     @media (orientation: portrait) {
         .portfolio {
