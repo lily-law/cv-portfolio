@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React, {Fragment} from "react"
 import cv from "../images/nav/cv.svg"
-import projectBin from "../images/nav/project-bin.svg"
+import portfolio from "../images/nav/portfolio.svg"
 import lilyLaw from "../images/nav/lily-law.svg"
 import logo from "../images/logo.svg"
 
@@ -11,7 +11,7 @@ const Landing = () => (<Fragment>
       <div className="overlay">
         <img className="nav__logo" src={logo} alt="" />
         <img className="cv" src={cv} alt="CV" />
-        <img className="project-bin" src={projectBin} alt="Project Bin" />
+        <img className="portfolio" src={portfolio} alt="Portfolio" />
         <img className="lily-law" src={lilyLaw} alt="Lily Law" />
         <section className="links">
           {/* TODO <Links /> */}
@@ -25,7 +25,7 @@ const Landing = () => (<Fragment>
                     <path d="M -179 537.5858154296875 L 108.9998168945313 249.5852661132813 L 108.9998168945313 110.4132766723633 L -179 -177.5858154296875 L -179 537.5858154296875 M -180 540 L -180 -180 L 109.9998168945313 109.9990921020508 L 109.9998168945313 249.9994506835938 L -180 540 Z" stroke="none" />
                 </g>
             </g>
-          <Link to="/#project-bin">
+          <Link to="/#portfolio">
               <g transform="translate(437 238.112)">
                   <g transform="translate(0 -0.112)" fill="#505050">
                       <path d="M 259.5000305175781 259.4978637695313 L 1.207168936729431 259.4978637695313 L 130.3535614013672 130.3522338867188 L 259.5000305175781 1.207124352455139 L 259.5000305175781 259.4978637695313 Z" stroke="none"/>
@@ -129,8 +129,8 @@ const Landing = () => (<Fragment>
         grid-template-rows: 3.5fr 1.5fr 3.5fr 1.5fr;
         grid-template-areas: 
         "lily-law cv cv links"
-        "lily-law logo project-bin links"
-        "lily-law logo project-bin links"
+        "lily-law logo portfolio links"
+        "lily-law logo portfolio links"
         ". blog . links";
     }
     @media (orientation: portrait) {
@@ -152,13 +152,13 @@ const Landing = () => (<Fragment>
             margin-left: -14vw;
         }
     }
-    .project-bin {
-        grid-area: project-bin;
+    .portfolio {
+        grid-area: portfolio;
         width: 30vh;
         margin-left: -14vh;
     }
     @media (orientation: portrait) {
-        .project-bin {
+        .portfolio {
             width: 30vw;
             margin-left: -14vw;
         }

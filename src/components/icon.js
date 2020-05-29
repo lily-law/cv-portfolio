@@ -85,7 +85,7 @@ const icons = {
     },
     arduino: {
         img: 'arduinologo.svg',
-        title: 'Arduino - an open-source hardware and software company',
+        title: 'Arduino - An open-source hardware and software company',
         link: 'https://www.arduino.cc/'
     },
     c: {
@@ -99,7 +99,7 @@ const icons = {
         link: 'https://discord.gg/2wB67u'
     },
     mygithub: {
-        img: 'github.svg',
+        img: 'mygithub.svg',
         title: 'Lily Law\'s GitHub - A student of JavaScript',
         link: 'https://github.com/lily-law'
     },
@@ -112,6 +112,16 @@ const icons = {
         img: 'skype.svg',
         title: 'Lily Law\'s Skype Address - Say Hi!',
         link: 'https://join.skype.com/invite/dyug0KPaVxb1'
+    },
+    agile: {
+        img: 'agile.svg',
+        title: 'Agile software development - Advocates adaptive planning, evolutionary development, early delivery, and continual improvement',
+        link: 'https://en.wikipedia.org/wiki/Agile_software_development'
+    },
+    github: {
+        img: 'octocat.png',
+        title: 'GitHub - Brings together the world\'s largest community of developers to discover, share, and build better software',
+        link: 'https://github.com/'
     }
 }
 
@@ -120,7 +130,7 @@ const Icon = ({name, className='', link}) => {
         const {img, title} = icons[name]
         let url = link ? link : icons[name].link ? icons[name].link : null
         return (<Fragment>
-            {url ? <a href={url} className={className} target="_blank">
+            {url ? <a href={url} className={className} target="_blank" rel="noreferrer">
                 <img src={'/icons/'+img} alt={name} title={title} />
             </a> : <figure className={className}>
                 <img src={'/icons/'+img} alt={name} title={title} />
@@ -129,8 +139,6 @@ const Icon = ({name, className='', link}) => {
             a, figure {
                 position: relative;
                 margin: 8px;
-                height: 40px;
-                max-width: 100%;
             }
             a {
                 cursor: pointer;
@@ -139,9 +147,10 @@ const Icon = ({name, className='', link}) => {
                 position: relative;
                 max-width: 100%;
                 height: 40px;
+                margin: 0;
             }
             .big img {
-                height: 100%;
+                height: 120px;
             }
             `}</style>
         </Fragment>)
