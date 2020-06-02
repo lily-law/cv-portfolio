@@ -6,6 +6,7 @@ import lilyLaw from "../images/nav/lily-law.svg"
 import logo from "../images/logo.svg"
 import Contact from "./contact"
 import { useSpring, animated as a, interpolate } from 'react-spring'
+import SEO from "./seo"
 
 const Landing = () => {
 const [{ st }, set] = useSpring(() => ({ st: 0 }))
@@ -17,6 +18,7 @@ useEffect(() => {
 })
 return (<Fragment>
     <div className="wrapper">
+    <SEO title="Lily Law" />
     <a.nav className="landing__nav" style={{transform: interpNav}}>
       <div className="overlay">
         <a.img className="landing__logo" src={logo} alt="" style={{transform: interpIcon}} />
@@ -78,21 +80,19 @@ return (<Fragment>
             position: relative;
             width: 100%;
             height: 100vh;
-            transform: rotate(${/*connectup rotation*/'0deg'});
         }
         .landing__logo {
-            width: 10vh;
-            margin-top: 9vh;
-            margin-left: 3vh;
+            width: 15vh;
+            margin-top: 8vh;
+            margin-left: 1vh;
             grid-area: logo;
             place-self: start start;
-            transform: rotate(${/*inverse of nav rotation*/'0deg'});
         }
         @media (orientation: portrait) {
             .landing__logo {
-                width: 10vw;
-                margin-top:9vw;
-                margin-left: 3vw;
+                width: 15vw;
+                margin-top: 8vw;
+                margin-left: 1vw;
             }
         }
     `}</style>
