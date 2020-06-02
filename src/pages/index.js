@@ -8,6 +8,7 @@ const IndexPage = () => (<Fragment>
   <Landing />
   <Cv />
   <Portfolio />
+  <Footer />
 </Fragment>)
 
 export default IndexPage
