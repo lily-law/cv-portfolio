@@ -4,38 +4,34 @@ import { Link } from "gatsby"
 
 const projects = [
     {
-        title: 'U Buzz Tap',
-        link: 'https://u-buzz-tap.herokuapp.com/',
-        repo: 'https://github.com/lily-law/u-buzz-tap',
-        icons: ['nodejs', 'socketio', 'react'],
-        description: 'Simple buzzer SPA for multiple remote players',
-        text: []
-    },
-    {
-        title: 'White Raven', 
-        link: 'https://white-raven.co.uk', 
-        screenshot: 'whiteraven.gif', 
-        icons: ['react', 'xd'], 
-        description: 'Website design and development',
+        title: 'Wavy',
+        link: 'https://chingu-voyages.github.io/v18-geckos-team-02/',
+        repo: 'https://github.com/chingu-voyages/v18-geckos-team-02',
+        icons: ['chingu', 'react', 'xd'],
+        description: 'A PWA that archives files into a visual timeline',
         text: [
-            'I was given free rein in creating the design. I developed the website using ReactJS while creating the backend in PHP so it could be easily hosted on any shared hosting plan.',  
-            'The landing features the logo (I designed), the navigation menu, and an easter egg of drifting clouds in the background.'
-        ]
-    },
+            'Voyage 18: Team project on Chingu',
+            'During this project I learnt how to work transparently with others, while improving my communication and planning skills.',
+        ],
+        screenshot: 'wavy.jpg'
+    }, 
     {
         title: 'Dashy', 
         link: 'https://v16-geckos-2-production.netlify.com/', 
-        screenshot: 'dashy.gif', 
+        repo: 'https://github.com/chingu-voyages/v16-geckos-team-02',
+        screenshot: 'dashy.jpg', 
         icons: ['chingu', 'svelte', 'xd'], 
         description: 'v16-geckos-team-02 - A Chingu team project',
         text: [
-            'This was a project of many firsts. First time working: using agile, on a team, in the Svelte framework. '
+            'Voyage 16: Team project on Chingu. Working with and learning a new framework, Svelte made this project interesting to work on.',
+            'This ended as a solo effort and it taught me about the value of momentum and perseverance.'
         ]
     },
     {
         title: 'Solo-Koala-54', 
         link: 'https://chingu-solo.github.io/solo-koala-54/', 
-        screenshot: 'dashy.gif', 
+        repo: 'https://github.com/Chingu-Solo/solo-koala-54',
+        screenshot: 'solo-koala-54.jpg', 
         icons: ['chingu', 'svelte', 'xd'], 
         description: 'A reimplementation of Google Fonts',
         text: [
@@ -43,9 +39,34 @@ const projects = [
         ]
     },
     {
+        title: 'White Raven', 
+        link: 'https://white-raven.co.uk', 
+        screenshot: 'white-raven.jpg', 
+        icons: ['react', 'xd'], 
+        description: 'SPA/website for Animal Communicator',
+        text: [
+            'I was given free rein in creating the design. I developed the website using ReactJS while creating the backend in PHP so it could be easily hosted on any shared hosting plan.', 
+            'The landing features a logo that I drew myself and an easter egg of drifting clouds in the background.',
+            'For the contact page I created a step by step booking system that collects the users information, processes a paypal payment, and sends out emails.'
+        ]
+    },
+    {
+        title: 'U Buzz Tap',
+        link: 'https://u-buzz-tap.herokuapp.com/',
+        repo: 'https://github.com/lily-law/u-buzz-tap',
+        icons: ['nodejs', 'socketio', 'react'],
+        description: 'Simple buzzer SPA for multiple remote players',
+        text: [
+            'During the lockdown we’ve been doing a weekly video chat quiz and it was suggested that we could use a buzzer app that accounts for the connection delays.', 
+            'I put this together recently over a couple of weekends.'
+        ],
+        screenshot: 'u-buzz-tap.jpg'
+    },
+    {
         title: 'Big Button Timer',
         repo: 'https://github.com/lily-law/bigButtonTimer',
         icons: ['c', 'arduino'],
+        screenshot: 'big-button-timer.jpg',
         description: 'A physical device with a big button and an 8 segment display',
         text: [
             'Programmed in C/Arduino, I made this with three modes stopwatch/pomodoro/counter.',
@@ -54,31 +75,12 @@ const projects = [
     },
     {
         title: 'grid',
-        link: 'https://www.npmjs.com/package/@lilylaw/grid',
         repo: 'https://github.com/lily-law/grid',
         icons: ['npm', 'js'],
         description: 'A JavaScript grid arrays constructor',
         text: [
             'I made this while working on implimenting a sudoku engine/generator.',
             'It\'s API will translate a given array into rows/coloumns/diagonals/blocks/nths and convert an index to coordinate and vice versa.'
-        ]
-    },
-    {
-        title: 'anyDate',
-        repo: 'https://github.com/lily-law/any-date',
-        icons: ['npm', 'js'],
-        description: 'Extracts date information from strings',
-        text: [
-            'Given any string input with date infomation (i.e. mon 4th/jan 2/0312/042012) it works out what is valid and returns an array of date objects ordered by most likely.'
-        ]
-    },
-    {
-        title: 'subcriber',
-        repo: 'https://github.com/lily-law/any-date',
-        icons: ['npm', 'js'],
-        description: 'Extracts date information from strings',
-        text: [
-            'Given any string input with date infomation (i.e. mon 4th/jan 2/0312/042012) it works out what is valid and returns an array of date objects ordered by most likely.'
         ]
     },
 ]
@@ -105,6 +107,11 @@ const Portfolio = () => {
                 {projects.map((data, index) => <Project key={data.title} {...{...data, index, feature, setFeature}} />)}
                 {Number.isInteger(feature) &&
                 <aside className="feature">
+                    <figure>
+                        <a href={projects[feature].link}  target="_blank" rel="noreferrer">
+                            <img src={"/projects/"+projects[feature].screenshot} alt="" />
+                        </a>
+                    </figure>
                     <section className="text">
                         {projects[feature].text.slice(0).map(paragraph => (typeof paragraph === "string") ? <p key={paragraph }>{paragraph}</p> : paragraph)}
                     </section>
@@ -117,6 +124,7 @@ const Portfolio = () => {
                 background: var(--black);
                 color: #464646;
                 min-height: 75vh;
+                padding-bottom: 120px;
                 max-width: 100%;
                 overflow-x: hidden;
             }
@@ -165,9 +173,20 @@ const Portfolio = () => {
                 max-width: 80vw;
                 grid-column-start: span 3;
                 display: grid;
+                grid-template-columns: 1fr 1fr;
                 place-items: center center;
                 background: var(--blue-d);
-                color: var(--grey-l);
+                color: var(--blue-l);
+                border: 3px solid var(--yellow-d);
+                margin-top: -3px;
+                box-shadow: 1px 1px 16px var(--yellow-l);
+                padding: 16px;
+            }
+            .feature section {
+                margin: 2vw;
+            }
+            img {
+                max-width: 100%;
             }
             @media only screen and (max-width: 1800px) {
                 main {
@@ -183,6 +202,7 @@ const Portfolio = () => {
                 }
                 .feature {
                     grid-column-start: span 1;
+                    grid-template-columns: 1fr;
                 }
             }
             
