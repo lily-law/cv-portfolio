@@ -1,16 +1,25 @@
 import { Link } from "gatsby"
-import React, {Fragment} from "react"
+import React, { Fragment, useEffect, useCallback } from "react"
 import cv from "../images/nav/cv.svg"
 import portfolio from "../images/nav/portfolio.svg"
 import lilyLaw from "../images/nav/lily-law.svg"
 import logo from "../images/logo.svg"
 import Contact from "./contact"
+import { useSpring, animated as a, interpolate } from 'react-spring'
 
-const Landing = () => (<Fragment>
+const Landing = () => {
+const [{ st }, set] = useSpring(() => ({ st: 0 }))
+const interpIcon = interpolate([st], (st) => `rotate(-${st}deg)`)
+const interpNav =  interpolate([st], (st) => `rotate(${st}deg)`)
+const onScroll = useCallback(e => set({ st: Math.min(Math.round(window.scrollY*(180 / (window.innerHeight/2))), 180) }), [set])
+useEffect(() => {
+    window.onscroll = onScroll
+})
+return (<Fragment>
     <div className="wrapper">
-    <nav>
+    <a.nav className="landing__nav" style={{transform: interpNav}}>
       <div className="overlay">
-        <img className="nav__logo" src={logo} alt="" />
+        <a.img className="landing__logo" src={logo} alt="" style={{transform: interpIcon}} />
         <img className="cv" src={cv} alt="CV" />
         <img className="portfolio" src={portfolio} alt="Portfolio" />
         <img className="lily-law" src={lilyLaw} alt="Lily Law" />
@@ -62,8 +71,31 @@ const Landing = () => (<Fragment>
           </g>
         </g>
       </svg>
-    </nav>
+    </a.nav>
     </div>
+    <style jsx global>{`
+        .landing__nav {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            transform: rotate(${/*connectup rotation*/'0deg'});
+        }
+        .landing__logo {
+            width: 10vh;
+            margin-top: 9vh;
+            margin-left: 3vh;
+            grid-area: logo;
+            place-self: start start;
+            transform: rotate(${/*inverse of nav rotation*/'0deg'});
+        }
+        @media (orientation: portrait) {
+            .landing__logo {
+                width: 10vw;
+                margin-top:9vw;
+                margin-left: 3vw;
+            }
+        }
+    `}</style>
     <style jsx>{`
     .wrapper {
       width: 100%;
@@ -74,27 +106,6 @@ const Landing = () => (<Fragment>
     @media (orientation: portrait) { 
         .wrapper {
             background: var(--grey-l); 
-        }
-    }
-    nav {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        transform: rotate(${/*connectup rotation*/'0deg'});
-    }
-    .nav__logo {
-        width: 10vh;
-        margin-top: 9vh;
-        margin-left: 3vh;
-        grid-area: logo;
-        place-self: start start;
-        transform: rotate(${/*inverse of nav rotation*/'0deg'});
-    }
-    @media (orientation: portrait) {
-        .nav__logo {
-            width: 10vw;
-            margin-top:9vw;
-            margin-left: 3vw;
         }
     }
     .background {
@@ -199,5 +210,5 @@ const Landing = () => (<Fragment>
     }
     `}</style>
   </Fragment>)
-
+}
 export default Landing
