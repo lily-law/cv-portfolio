@@ -2,6 +2,7 @@ import React, {Fragment} from "react"
 import Icon from "./icon"
 import { Link } from "gatsby"
 import cv from "../images/nav/cv.svg"
+import me from "../images/me.png"
 
 const Cv = () => {
     return (
@@ -15,9 +16,13 @@ const Cv = () => {
             <main>
                 <article>
                     <figure>
-                        <img src="/images/me.svg" alt="me" />
-                        <figcaption className="lily-law-caption"><Icon name="lilylaw" /></figcaption>
+                        <img src={me} alt="me" />
+                        <figcaption><Icon name="lilylaw" /></figcaption>
                     </figure> 
+                    <section>
+                        <p>I began learning to code with some downtime after having surgery and I've been hooked since.</p>
+
+                    </section>
                     <section>
                         <header>
                             <h2>Strengths at every stage of development.</h2>
@@ -29,13 +34,6 @@ const Cv = () => {
                             <li>The Ideal Team Member</li>
                         </ul>
                     </section>
-                    <section>
-                        <header>
-                            <h2>I'm looking to work in a team</h2>
-                        </header>
-                        <p>With people who love what they do as much I as I do.</p>
-                    </section>
-                    
                 </article>
                 <aside>
                     <section>
@@ -62,9 +60,11 @@ const Cv = () => {
                     </section>
                     <section>
                         <h3>Experianced working in remote teams</h3>
+                        <div className="icons">
                             <Icon name="agile" />
                             <Icon name="chingu" />
                             <Icon name="github" />
+                        </div>
                     </section>
                 </aside>
             </main>
@@ -97,6 +97,7 @@ const Cv = () => {
             }
             main {
                 min-height: calc(100vh - 150px);
+                width: 100%;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: auto 1fr;
@@ -113,6 +114,9 @@ const Cv = () => {
                 margin: 0 5vw;
                 text-align: right;
             }
+            section {
+                max-width: 300px;
+            }
             header {
                 margin-top: 32px;
                 word-break: break-word;
@@ -127,6 +131,10 @@ const Cv = () => {
                 align-content: center;
                 margin: 0 5vw;
             }
+            aside section {
+                display: grid;
+                place-items: center start;
+            }
             aside section header {
                 display: flex;
                 flex-flow: row wrap;
@@ -137,6 +145,10 @@ const Cv = () => {
                 text-align: center;
                 margin: 0;
             }
+            figure img {
+                width: 100%;
+                max-width: 300px;
+            }
             .icons {
                 padding: 8px;
                 padding-top: 0;
@@ -144,8 +156,8 @@ const Cv = () => {
                 flex-flow: row wrap;
                 justify-content: space-around;
             }
-            .lily-law-caption {
-                margin-top: -25%;
+            figcaption {
+                margin-top: -10%;
             }  
         `}</style>
     </Fragment>
