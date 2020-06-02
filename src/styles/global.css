@@ -11,6 +11,7 @@
     --blue-d: #000033;
     --blue-l: #99CCFF;
     --yellow-l: #FFFFCC;
+    --yellow-d: #E3E328;
     --flow-font-family: gill-sans-nova, sans-serif;
     --point-font-family: odile, serif;
     --logic-font-family: t26-carbon, monospace;
@@ -37,7 +38,9 @@ h3 {
     font-size: 22px;
 }
 p, li, a {
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: 2px;
 }
 
 @media only screen and (max-width: 820px) { 
@@ -51,6 +54,6 @@ p, li, a {
         font-size: calc(11px + 1.34vw);
     }
     p, li, a {
-        font-size: calc(8px + 1vw);
+        font-size: calc(9px + 1.1vw);
     }
 }
