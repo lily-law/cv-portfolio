@@ -4,6 +4,7 @@ import cv from "../images/nav/cv.svg"
 import portfolio from "../images/nav/portfolio.svg"
 import lilyLaw from "../images/nav/lily-law.svg"
 import logo from "../images/logo.svg"
+import Contact from "./contact"
 
 const Landing = () => (<Fragment>
     <div className="wrapper">
@@ -14,7 +15,7 @@ const Landing = () => (<Fragment>
         <img className="portfolio" src={portfolio} alt="Portfolio" />
         <img className="lily-law" src={lilyLaw} alt="Lily Law" />
         <section className="links">
-          {/* TODO <Links /> */}
+          <Contact nav {...{interpIcon}} />
         </section>
       </div>
       <svg className="background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720">
