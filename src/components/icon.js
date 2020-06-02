@@ -48,7 +48,7 @@ const icons = {
     },
     chingu: {
         img: 'chingu.svg',
-        title: 'Chingu - A remote 8-week program for web developers',
+        title: 'Chingu - Collaborative learning cohorts for developers',
         link: 'https://www.chingu.io/'
     },
     lilylaw: {
