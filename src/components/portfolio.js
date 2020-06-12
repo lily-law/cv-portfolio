@@ -4,6 +4,13 @@ import { Link } from "gatsby"
 
 const projects = [
     {
+        title: 'this website',
+        description: 'My CV + Portfolio',
+        icons: ['react', 'xd'], 
+        repo: 'https://github.com/lily-law/cv-portfolio',
+        text: ['']
+    },
+    {
         title: 'Wavy',
         link: 'https://chingu-voyages.github.io/v18-geckos-team-02/',
         repo: 'https://github.com/chingu-voyages/v18-geckos-team-02',
