@@ -2,7 +2,6 @@ import React, {Fragment} from "react"
 import Icon from "./icon"
 import { Link } from "gatsby"
 import cv from "../images/nav/cv.svg"
-import me from "../images/me.png"
 
 const Cv = () => {
     return (
@@ -16,7 +15,6 @@ const Cv = () => {
             <main>
                 <article>
                     <figure>
-                        <img src={me} alt="me" />
                         <figcaption><Icon name="lilylaw" /></figcaption>
                     </figure> 
                     <section>
