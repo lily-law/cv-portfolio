@@ -34,6 +34,10 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={{
+        rel: "stylesheet", 
+        href: "https://use.typekit.net/zuz0gqc.css"
+      }}
       meta={[
         {
           name: `description`,
