@@ -83,7 +83,7 @@ return (<Fragment>
         }
         .landing__logo {
             width: 15vh;
-            margin-top: 8vh;
+            margin-top: 7vh;
             margin-left: 1vh;
             grid-area: logo;
             place-self: start start;
@@ -91,7 +91,7 @@ return (<Fragment>
         @media (orientation: portrait) {
             .landing__logo {
                 width: 15vw;
-                margin-top: 8vw;
+                margin-top: 7vw;
                 margin-left: 1vw;
             }
         }
