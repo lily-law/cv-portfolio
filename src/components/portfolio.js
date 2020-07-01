@@ -1,8 +1,8 @@
-import React, { Fragment, useState, useEffect } from "react"
+import React, { Fragment, useState } from "react"
 import Project from "./project.js"
 import { Link } from "gatsby"
-import { useSpring, animated } from 'react-spring'
-import Icon from './icon'
+import { useSpring, animated } from "react-spring"
+import Feature from "./feature"
 
 const projects = [
     {
@@ -11,16 +11,17 @@ const projects = [
         icons: ['react', 'xd'], 
         repo: 'https://github.com/lily-law/cv-portfolio',
         text: [''],
-        points: [
-            {
-                title: 'Overview',
+        points: {
+            'Overview': {
+                text: [
 
+                ],
+                image: ''
             },
-            {
-                title: 'Design',
-                content: { link: '' },
+            'Design': {
+                link: '',
             }
-        ]
+        }
     },
     {
         title: 'Wavy',
@@ -28,47 +29,82 @@ const projects = [
         repo: 'https://github.com/chingu-voyages/v18-geckos-team-02',
         icons: ['chingu', 'react', 'xd'],
         description: 'A PWA that archives files into a visual timeline',
-        text: [
-            'Voyage 18: Team project on Chingu',
-            'During this project I learnt how to work transparently with others, while improving my communication and planning skills.',
-        ],
-        screenshot: 'wavy.jpg'
- 
+        points: {
+            'Overview': {
+                text: [
+                    'Voyage 18: Team project on Chingu',
+                    'During this project I learnt how to work transparently with others, while improving my communication and planning skills.',
+                ],
+                display: {
+                    image: 'wavy.jpg'
+                } 
+            },
+            'Design': {
+                link: '',
+            }
+        }
     }, 
     {
         title: 'Dashy', 
         link: 'https://v16-geckos-2-production.netlify.com/', 
         repo: 'https://github.com/chingu-voyages/v16-geckos-team-02',
-        screenshot: 'dashy.jpg', 
         icons: ['chingu', 'svelte', 'xd'], 
         description: 'v16-geckos-team-02 - A Chingu team project',
-        text: [
-            'Voyage 16: Team project on Chingu. Working with and learning a new framework, Svelte made this project interesting to work on.',
-            'This ended as a solo effort and it taught me about the value of momentum and perseverance.'
-        ]
+        points: {
+            'Overview': {
+                text: [
+                    'Voyage 16: Team project on Chingu. Working with and learning a new framework, Svelte made this project interesting to work on.',
+                    'This ended as a solo effort and it taught me about the value of momentum and perseverance.'
+                ],
+                display: {
+                    image: 'dashy.jpg'
+                } 
+            },
+            'Design': {
+                link: '',
+            }
+        }
     },
     {
         title: 'Solo-Koala-54', 
         link: 'https://chingu-solo.github.io/solo-koala-54/', 
         repo: 'https://github.com/Chingu-Solo/solo-koala-54',
-        screenshot: 'solo-koala-54.jpg', 
         icons: ['chingu', 'svelte', 'xd'], 
         description: 'A reimplementation of Google Fonts',
-        text: [
-            'I created this for my Chingu pre-work project. While having fun coding the workings of this site, it felt appropriate to bring a little bit of fun into the design.'
-        ]
+        points: {
+            'Overview': {
+                text: [
+                    'I created this for my Chingu pre-work project. While having fun coding the workings of this site, it felt appropriate to bring a little bit of fun into the design.'
+                ],
+                display: {
+                    image: 'solo-koala-54.jpg'
+                } 
+            },
+            'Design': {
+                link: '',
+            }
+        }
     },
     {
         title: 'White Raven', 
         link: 'https://white-raven.co.uk', 
-        screenshot: 'white-raven.jpg', 
         icons: ['react', 'xd'], 
         description: 'SPA/website for Animal Communicator',
-        text: [
-            'I was given free rein in creating the design. I developed the website using ReactJS while creating the backend in PHP so it could be easily hosted on any shared hosting plan.', 
-            'The landing features a logo that I drew myself and an easter egg of drifting clouds in the background.',
-            'For the contact page I created a step by step booking system that collects the users information, processes a paypal payment, and sends out emails.'
-        ]
+        points: {
+            'Overview': {
+                text: [
+                    'I was given free rein in creating the design. I developed the website using ReactJS while creating the backend in PHP so it could be easily hosted on any shared hosting plan.', 
+                    'The landing features a logo that I drew myself and an easter egg of drifting clouds in the background.',
+                    'For the contact page I created a step by step booking system that collects the users information, processes a paypal payment, and sends out emails.'
+                ],
+                display: {
+                    image: 'white-raven.jpg'
+                } 
+            },
+            'Design': {
+                link: '',
+            }
+        }
     },
     {
         title: 'U Buzz Tap',
@@ -76,43 +112,56 @@ const projects = [
         repo: 'https://github.com/lily-law/u-buzz-tap',
         icons: ['nodejs', 'socketio', 'react'],
         description: 'Simple buzzer SPA for multiple remote players',
-        text: [
-            'During the lockdown we’ve been doing a weekly video chat quiz and it was suggested that we could use a buzzer app that accounts for the connection delays.', 
-            'I put this together recently over a couple of weekends.'
-        ],
-        screenshot: 'u-buzz-tap.jpg'
+        points: {
+            'Overview': {
+                text: [
+                    'During the lockdown we’ve been doing a weekly video chat quiz and it was suggested that we could use a buzzer app that accounts for the connection delays.', 
+                    'I put this together recently over a couple of weekends.'
+                ],
+                display: {
+                    image: 'u-buzz-tap.jpg'
+                } 
+            },
+            'Design': {
+                link: '',
+            }
+        }
     },
     {
         title: 'Big Button Timer',
         repo: 'https://github.com/lily-law/bigButtonTimer',
         icons: ['c', 'arduino'],
-        screenshot: 'big-button-timer.jpg',
         description: 'A physical device with a big button and an 8 segment display',
-        text: [
-            'Programmed in C/Arduino, I made this with three modes stopwatch/pomodoro/counter.',
-            'Simple and reliable bit of code I use everyday. The big button makes this device, giving it an easy of use a notch above commercial devices I could find.'
-        ]
+        points: {
+            'Overview': {
+                text: [
+                    'Programmed in C/Arduino, I made this with three modes stopwatch/pomodoro/counter.',
+                    'Simple and reliable bit of code I use everyday. The big button makes this device, giving it an easy of use a notch above commercial devices I could find.'
+                ],
+                display: {
+                    image: 'big-button-timer.jpg'
+                } 
+            }
+        }
     },
     {
         title: 'grid',
         repo: 'https://github.com/lily-law/grid',
         icons: ['npm', 'js'],
         description: 'A JavaScript grid arrays constructor',
-        text: [
-            'I made this while working on implimenting a sudoku engine/generator.',
-            'It\'s API will translate a given array into rows/coloumns/diagonals/blocks/nths and convert an index to coordinate and vice versa.'
-        ]
+        points: {
+            'Overview': {
+                text: [
+                    'I made this while working on implimenting a sudoku engine/generator.',
+                    'It\'s API will translate a given array into rows/coloumns/diagonals/blocks/nths and convert an index to coordinate and vice versa.'
+                ]
+            }
+        }
     },
 ]
 
 const Portfolio = () => {
     const [feature, setFeature] = useState(null)
-    const [cols, setCols] = useState(1)
-    useEffect(() => {
-        const findNCols = () => window.innerWidth <= 1200 ? 1 : window.innerWidth <= 1800 ? 2 : 3
-        setCols(findNCols())
-        window.onresize = () => setCols(findNCols())
-    }, [])
     const flickeringAnimation = useSpring({
         to: async (next, cancel) => {
             async function flicker() {
@@ -160,22 +209,7 @@ const Portfolio = () => {
             </header>
             <main>
                 {projects.map((data, index) => <Project key={data.title} {...{...data, index, feature, setFeature: handleSetFeature}} />)}
-                {Number.isInteger(feature) &&
-                <aside className="feature">
-                    <figure>
-                        <a href={projects[feature].link}  target="_blank" rel="noreferrer">
-                            <img src={"/projects/"+projects[feature].screenshot} alt="" />
-                        </a>
-                    </figure>
-                    <section className="text">
-                        <nav className="links">
-                            {projects[feature].link && <Icon name="deploy" link={projects[feature].link} />}
-                            {projects[feature].repo && <Icon name="repo" link={projects[feature].repo} />}
-                        </nav>
-                        {projects[feature].text.slice(0).map(paragraph => (typeof paragraph === "string") ? <p key={paragraph }>{paragraph}</p> : paragraph)}
-                        {projects[feature].points && projects[feature].points.map(p => <button>{p.title}</button>)}
-                    </section>
-                </aside>}
+                {Number.isInteger(feature) && <Feature {...{feature, projects}} />}
             </main>
         </div>
         <style jsx global>{`
@@ -237,49 +271,14 @@ const Portfolio = () => {
                 place-items: end center;
                 grid-template-columns: repeat(3, auto);
             }
-            .feature {
-                order: ${(cols*10)*(1 + Math.floor(feature/cols))-9};
-                width: calc(550px * ${cols});
-                max-width: 80vw;
-                grid-column-start: span 3;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                place-items: center center;
-                background: var(--blue-d);
-                color: var(--blue-l);
-                border: 3px solid var(--yellow-d);
-                margin-top: -3px;
-                box-shadow: 1px 1px 16px var(--yellow-l);
-                padding: 16px;
-            }
-            .feature section {
-                margin: 2vw;
-            }
-            img {
-                max-width: 100%;
-            }
-            .links {
-                grid-area: links;
-                display: inline-flex;
-                flex-flow: row wrap;
-                padding-bottom: 8px;
-                border-bottom: 1px solid var(--grey-l);
-            }
             @media only screen and (max-width: 1800px) {
                 main {
                     grid-template-columns: repeat(2, auto);
-                }
-                .feature {
-                    grid-column-start: span 2;
                 }
             }
             @media only screen and (max-width: 1200px) {
                 main {
                     grid-template-columns: repeat(1, auto);
-                }
-                .feature {
-                    grid-column-start: span 1;
-                    grid-template-columns: 1fr;
                 }
             }
             
