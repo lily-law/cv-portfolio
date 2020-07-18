@@ -53,7 +53,7 @@ const Feature = ({ feature, projects }) => {
             }
             button {
                 width: 80px;
-                color: var(--blue-l);
+                color: var(--grey-xl);
                 background: var(--blue-d);
             }
             .active {
