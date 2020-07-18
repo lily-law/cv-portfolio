@@ -5,13 +5,13 @@
 
 import React, { useState, useRef } from "react"
 import Email from "./email"
+import Spinner from "./spinner"
 
 const ContactForm = () => {
     const [email, setEmail] = useState("")
     const [emailIsValid, setEmailIsValid] = useState(false)
     const [focusEmail, setFocusEmail] = useState(0)
     const [message, setMessage] = useState("")
-    const [name, setName] = useState("")
     const [response, setResponse] = useState()
     const [isBot, setIsBot] = useState()
     const formRef = useRef()
@@ -46,31 +46,37 @@ const ContactForm = () => {
 
     const Response = ({children}) => (<>
         <div className="response">
-            <button onClick={() => setResponse(null)}>&lt;</button>
             <div>
                 {children}
             </div>
+            <button onClick={() => setResponse(null)}>&lt;</button>
         </div>
         <style jsx>{`
             .response {
                 display: grid;
                 place-items: center center;
+                border: 1px solid var(--blue-l);
+                background: var(--blue-d);
+                padding: 16px;
+                color: var(--blue-l);
             }
             button {
                 justify-self: end;
+                background: var(--yellow-d);
             }
         `}</style>
     </>)
     const Sent = () => (
         <Response>
-            <p>Thank you {name}!</p>
+            <p>Thank you!</p>
             <p>I'll get back to you ASAP</p>
         </Response>
     )
     const NotSent = () => (
         <Response>
-            <p>Sorry somethings not working :S</p>
-            <p>Please email me directly</p>
+            <p>Wooops... Sorry!</p> 
+            <p>Somethings not working...</p>
+            <p>Please try again or contact me using one of the links below</p>
         </Response>
     )
     return (<>
@@ -78,15 +84,16 @@ const ContactForm = () => {
             <h1>Message me!</h1>
             {!response ? <>
                     <Email value={email} onChange={e => setEmail(e.target.value)} onTest={setEmailIsValid} focus={focusEmail} />
-                    <label>
-                        <textarea placeholder="Your message/challenge/invitation" value={message} onChange={e => setMessage(e.target.value)} name="message" rows="10" />
-                    </label>
+                    <textarea placeholder="Your message/challenge/invitation" value={message} onChange={e => setMessage(e.target.value)} name="message" rows="10" />
                     <input className="hide" type="text" value={isBot} onChange={e => setIsBot(e.target.value)} />
                     <button onClick={handleSubmit}><span className="send">Send</span></button>
                 </> :
                 response === "inProgress" ? 
-                    <div>sending...</div> :
-                    response.result === "success" ? 
+                    <div className="sending">
+                        <Spinner/>
+                        <p>Sending</p>
+                    </div> :
+                    response?.result === "success" ? 
                         <Sent /> :
                         <NotSent />
             }
@@ -98,6 +105,7 @@ const ContactForm = () => {
                 height: 450px;
                 width: 90%;
                 max-width: 550px;
+                place-items: center center;
             }
             h1 {
                 color: var(--blue-l);
@@ -108,13 +116,26 @@ const ContactForm = () => {
                 text-align: center;
                 font-size: 48px;
             }
-            label { 
-                display: grid;
-            }
             .hide {
                 display: none;
             }
+            .sending {
+                width: 50%;
+                position: relative;
+            }
+            p {
+                font-size: 24px;
+                color: var(--blue-l);
+                background: linear-gradient(to right, var(--blue-l), var(--blue-d), var(--blue-l));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                position: absolute;
+                top: calc(50% - 36px);
+                left: calc(50% - 24px);
+                z-index: 100;
+            }
             textarea {
+                width: 100%;
                 background: var(--blue-l);
                 padding: 16px;
                 color: var(--blue-d);
@@ -122,6 +143,7 @@ const ContactForm = () => {
                 resize: none;
             }
             button {
+                width: 100%;
                 background: linear-gradient(to right, var(--blue-l), var(--blue-d), var(--blue-l));
                 display: grid;
                 place-items: center center;
@@ -141,7 +163,3 @@ const ContactForm = () => {
 }
 
 export default ContactForm
-
-
-
-// https://script.google.com/macros/s/AKfycbwhat6VqS3pcO2o5mGNVZJzEr9rgNAK6E_DB8Gm/exec

@@ -29,6 +29,7 @@ const Email = ({ value, onChange, onTest, focus }) => {
             label {
                 display: grid;
                 position: relative;
+                width: 100%;
             }
             input {
                 background: var(--blue-d);
