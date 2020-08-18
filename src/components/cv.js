@@ -28,7 +28,6 @@ const Cv = () => {
                             <li>Artistic with a User Focus</li>
                             <li>Empathetic and Introspective</li>
                             <li>Curious and Persistent</li>
-                            <li>The Ideal Team Member</li>
                         </ul>
                     </section>
                 </article>
@@ -94,7 +93,6 @@ const Cv = () => {
                 transform: scaleY(-1) rotate(180deg);
             }
             main {
-                min-height: calc(100vh - 150px);
                 width: 100%;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
