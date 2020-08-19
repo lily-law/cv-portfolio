@@ -3,7 +3,8 @@ import Icon from './icon'
 
 const Feature = ({ feature, projects }) => {
     const [cols, setCols] = useState(1)
-    const [activeTab, setActiveTab] = useState('Overview')
+    const firstTab = projects[feature].points && Object.keys(projects[feature].points)[0];
+    const [activeTab, setActiveTab] = useState(firstTab)
     let activeProject = projects[feature].points?.[activeTab]
     useEffect(() => {
         const findNCols = () => window.innerWidth <= 1200 ? 1 : window.innerWidth <= 1800 ? 2 : 3
@@ -39,13 +40,16 @@ const Feature = ({ feature, projects }) => {
                 grid-column-start: span 3;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                place-items: center center;
+                place-items: start center;
                 background: var(--blue-d);
                 color: var(--blue-l);
                 border: 3px solid var(--yellow-d);
                 margin-top: -3px;
                 box-shadow: 1px 1px 16px var(--yellow-l);
                 padding: 16px;
+            }
+            figure {
+                align-self: center;
             }
             section {
                 margin: 2vw;

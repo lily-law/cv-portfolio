@@ -240,7 +240,7 @@ const Portfolio = () => {
             </header>
             <main>
                 {projects.map((data, index) => <Project key={data.title} {...{...data, index, feature, setFeature: handleSetFeature}} />)}
-                {Number.isInteger(feature) && <Feature {...{feature, projects}} />}
+                {Number.isInteger(feature) && <Feature key={'feature'+feature} {...{feature, projects}} />}
             </main>
         </div>
         <style jsx global>{`
@@ -301,6 +301,7 @@ const Portfolio = () => {
                 display: grid;
                 place-items: end center;
                 grid-template-columns: repeat(3, auto);
+                padding: 5vw;
             }
             @media only screen and (max-width: 1800px) {
                 main {
