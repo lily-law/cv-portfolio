@@ -11,7 +11,7 @@ const Links = ({nav, interpIcon}) => {
     ];
     const addMotion = icon => ( // TODO link in rotation animation 
         <a.div className="landing__contact__link" style={{transform: interpIcon}} >
-            <Icon name={icon} />
+            <Icon name={icon} link />
         </a.div>
     );
     return (<Fragment>

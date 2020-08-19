@@ -2,7 +2,6 @@ import React, {Fragment} from "react"
 import Icon from "./icon"
 import { Link } from "gatsby"
 import cv from "../images/nav/cv.svg"
-import me from "../images/me.png"
 
 const Cv = () => {
     return (
@@ -16,12 +15,10 @@ const Cv = () => {
             <main>
                 <article>
                     <figure>
-                        <img src={me} alt="me" />
                         <figcaption><Icon name="lilylaw" /></figcaption>
                     </figure> 
                     <section>
                         <p>I began learning to code with some downtime after having surgery and I've been hooked since.</p>
-
                     </section>
                     <section>
                         <header>
@@ -31,7 +28,6 @@ const Cv = () => {
                             <li>Artistic with a User Focus</li>
                             <li>Empathetic and Introspective</li>
                             <li>Curious and Persistent</li>
-                            <li>The Ideal Team Member</li>
                         </ul>
                     </section>
                 </article>
@@ -59,7 +55,7 @@ const Cv = () => {
                         </figure>
                     </section>
                     <section>
-                        <h3>Experianced working in remote teams</h3>
+                        <h3>Experienced working in remote teams</h3>
                         <div className="icons">
                             <Icon name="agile" />
                             <Icon name="chingu" />
@@ -80,6 +76,7 @@ const Cv = () => {
                 color: var(--blue-l);
                 max-width: 100%;
                 overflow-x: hidden;
+                font-family: var(--flow-font-family);
             }
             .heading {
                 margin: 0;
@@ -96,7 +93,6 @@ const Cv = () => {
                 transform: scaleY(-1) rotate(180deg);
             }
             main {
-                min-height: calc(100vh - 150px);
                 width: 100%;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -115,7 +111,7 @@ const Cv = () => {
                 text-align: right;
             }
             section {
-                max-width: 300px;
+                max-width: 600px;
             }
             header {
                 margin-top: 32px;
@@ -133,7 +129,7 @@ const Cv = () => {
             }
             aside section {
                 display: grid;
-                place-items: center start;
+                place-items: center center;
             }
             aside section header {
                 display: flex;
@@ -159,6 +155,11 @@ const Cv = () => {
             figcaption {
                 margin-top: -10%;
             }  
+            h2, h3 {
+                font-family:  var(--point-font-family);
+                font-style: normal;
+                font-weight: 400;
+            }
         `}</style>
     </Fragment>
     )

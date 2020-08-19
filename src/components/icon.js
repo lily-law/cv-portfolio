@@ -128,9 +128,9 @@ const icons = {
 const Icon = ({name, className='', link}) => {
     if (icons.hasOwnProperty(name)) {
         const {img, title} = icons[name]
-        let url = link ? link : icons[name].link ? icons[name].link : null
+        let url = typeof link === 'string' ? link : icons[name].link ? icons[name].link : null
         return (<Fragment>
-            {url ? <a href={url} className={className} target="_blank" rel="noreferrer">
+            {link && url ? <a href={url} className={className} target="_blank" rel="noreferrer">
                 <img src={'/icons/'+img} alt={name} title={title} />
             </a> : <figure className={className}>
                 <img src={'/icons/'+img} alt={name} title={title} />

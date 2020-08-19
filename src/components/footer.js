@@ -1,49 +1,41 @@
-import React, { Fragment } from 'react'
-import Icon from "./icon"
+import React, { Fragment } from "react"
+import ContactForm from "./contactForm"
 import Contact from "./contact"
 
 const Footer = () => {
     return (<Fragment>
         <footer>
-            <div>
+            <div className="contactForm">
+                <ContactForm />
+            </div>
+            <div className="links">
                 <Contact />
             </div>
-            <a href="https://github.com/lily-law/cv-portfolio" target="__blank" rel="noreferrer">
-                <p>Designed and developed by me for you</p>
-                <Icon name="repo" className="big" />
-                <p>Thank you for visiting</p>
-            </a> 
         </footer>
         <style jsx>{`
             footer {
                 min-height: 25vh;
-                background: linear-gradient(var(--black), var(--yellow-l));
+                background: linear-gradient(to right, var(--black), var(--yellow-d), var(--black));
                 display: grid;
-                place-items: start center;
+                place-items: center center;
+                grid-template-rows: auto 1fr;
+                padding-bottom: 150px;
+                grid-gap: 32px;
             }
             div {
-                padding: 5vw;
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: space-around;
-                align-items: center;
+                display: grid;
+                place-items: center center;
             }
-            a{
-                padding: 5vw;
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: space-around;
-                align-items: center;
-                align-self: end;
+            .contactForm {
+                margin-top: 80px;
+                width: 100%;
+            }
+            .links {
+                display: grid;
+                place-items: center center;
+                grid-template-columns: repeat(4, 1fr);
                 width: 80%;
-            }
-            p {
-                max-width: 200px;
-                color: var(--blue-d);
-                text-align: left;
-            }
-            p:first-child { 
-                text-align: right;
+                max-width: 480px;
             }
         `}</style>
     </Fragment>)
