@@ -49,7 +49,7 @@ const Feature = ({ feature, projects }) => {
             }
             section {
                 margin: 2vw;
-                width: 100%;
+                max-width: 100%;
             }
             button {
                 width: 80px;
