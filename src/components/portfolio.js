@@ -6,20 +6,115 @@ import Feature from "./feature"
 
 const projects = [
     {
-        title: '(this site)',
-        description: 'My CV + Portfolio',
-        icons: ['react', 'xd'], 
-        repo: 'https://github.com/lily-law/cv-portfolio',
-        text: [''],
+        title: 'Mars Photo API',
+        link: 'https://chingu-solo-mars-rover-api.herokuapp.com/',
+        repo: 'https://github.com/lily-law/chingu-solo-mars-rover-project',
+        icons: ['nodejs', 'react'],
+        description: 'Web app to search and view photos taken by mars rovers. A Chingu solo project.',
         points: {
             'Overview': {
                 text: [
-
+                    `Backend on this is a simple node.js express server, which 
+                    expose two main routes: /api/photos/ and /api/manifests/.`,
+                    `These are used as a gateway to NASA's Mars Photos API, 
+                    protecting my private API key and reducing any unnecessary 
+                    outbound requests.
+                    Behind these two routes I've created 
+                    four API methods:`,
+                    ` - getPhotoList: calls NASA's API and returns an array of 
+                     upto 25 photo data objects and a url used by the client for 
+                     pagenation (shortcut link to the next set of upto 25)
+                    `,` - getManifest: calls NASA's API and returns a summary of 
+                     the data available on given rover, this is used in the 
+                     client to limit the avalible filters and queries, this way a 
+                     users search will never return an empty result 
+                    `,` - validatePhotosRequest and validateManifestRequest: checks 
+                     if any of the request parameters are invalid and returns 
+                     user friendly error messages
+                    `
                 ],
-                image: ''
+                display: {
+                    image: 'mars-photo-api.png'
+                },
             },
             'Design': {
-                link: '',
+                text: [
+                    `For the frontend I've kept it simple and clean. By creating a 
+                    collapsable sidebar UI, development on this was quick and easy. 
+                    Users are able to search for Mars rover photos, scroll through
+                    all result (pagination is automatically triggered), and click 
+                    on results for a full view. A status component keeps users 
+                    informed about the apps current processes, completed tasks, and
+                    any errors.`
+                ],
+                display: {
+                    image: 'mars-photo-api-2.png'
+                }
+            },
+            
+        }
+    },
+    {
+        title: 'White Raven', 
+        link: 'https://white-raven.co.uk', 
+        icons: ['react', 'xd'], 
+        description: 'Unique web design and developments for an Animal Communicator',
+        points: {
+            'Overview': {
+                text: [
+                    `The landing page has animated drifting clouds as an easter egg.`,
+                    `I allocated a large chunk of the time spent on this project to the design.
+                    The client desired something unique, bright, and natureful`
+                ],
+                display: {
+                    image: 'white-raven.png'
+                } 
+            },
+            'Booking System': {
+                text: [
+                    `For each booking the client requires a fair chunk of infomation from users, 
+                    so make this less daunting I created a booking modal that breaks this down 
+                    into smaller steps.`,
+                ],
+                display: {
+                    image: 'white-raven-2.png'
+                }
+            }
+        }
+    },
+    {
+        title: 'U Buzz Tap',
+        link: 'https://u-buzz-tap.herokuapp.com/',
+        repo: 'https://github.com/lily-law/u-buzz-tap',
+        icons: ['nodejs', 'socketio', 'react'],
+        description: 'Simple buzzer SPA for multiple remote players',
+        points: {
+            'Overview': {
+                text: [
+                    `During the lockdown we’ve been doing a weekly video chat quiz and it was 
+                    suggested that we could use a buzzer app that accounts for the connection delays.`, 
+                    `Anyone can create a session and using the url can invite anyone to join. In session 
+                    users get a simple view of who's joined and a big button to buzz in with.`,
+                    `My aim for this app was to make it to the point, simple, and cheap to host`,
+                    `Each session url contains everything needed to revive it's self without the server 
+                    needing to store anything.`
+                ],
+                display: {
+                    image: 'u-buzz-tap.png'
+                } 
+            },
+            'The Buzz Process' : {
+                text: [
+                    `When a user hits the buzzer and the server recieves a 'buzzed' event, it sends 
+                    out a ping to each client. Once each client has responded to the ping
+                    the server can end the round and announce the winner.`, `If between the ping process the server 
+                    recieves a 'buzzed' event from another user it calculates when their buzzer was activated, 
+                    accounting for connection delays and then announces all who buzzed and how many milliseconds 
+                    runner ups were out by`
+                ],
+                display: {
+                    image: 'u-buzz-tap-2.png'
+                } 
             }
         }
     },
@@ -33,14 +128,12 @@ const projects = [
             'Overview': {
                 text: [
                     'Voyage 18: Team project on Chingu',
-                    'During this project I learnt how to work transparently with others, while improving my communication and planning skills.',
+                    `During this project I learnt how to work transparently with others, while improving 
+                    my communication and planning skills.`,
                 ],
                 display: {
                     image: 'wavy.jpg'
                 } 
-            },
-            'Design': {
-                link: '',
             }
         }
     }, 
@@ -59,9 +152,6 @@ const projects = [
                 display: {
                     image: 'dashy.jpg'
                 } 
-            },
-            'Design': {
-                link: '',
             }
         }
     },
@@ -79,51 +169,6 @@ const projects = [
                 display: {
                     image: 'solo-koala-54.jpg'
                 } 
-            },
-            'Design': {
-                link: '',
-            }
-        }
-    },
-    {
-        title: 'White Raven', 
-        link: 'https://white-raven.co.uk', 
-        icons: ['react', 'xd'], 
-        description: 'SPA/website for Animal Communicator',
-        points: {
-            'Overview': {
-                text: [
-                    'I was given free rein in creating the design. I developed the website using ReactJS while creating the backend in PHP so it could be easily hosted on any shared hosting plan.', 
-                    'The landing features a logo that I drew myself and an easter egg of drifting clouds in the background.',
-                    'For the contact page I created a step by step booking system that collects the users information, processes a paypal payment, and sends out emails.'
-                ],
-                display: {
-                    image: 'white-raven.jpg'
-                } 
-            },
-            'Design': {
-                link: '',
-            }
-        }
-    },
-    {
-        title: 'U Buzz Tap',
-        link: 'https://u-buzz-tap.herokuapp.com/',
-        repo: 'https://github.com/lily-law/u-buzz-tap',
-        icons: ['nodejs', 'socketio', 'react'],
-        description: 'Simple buzzer SPA for multiple remote players',
-        points: {
-            'Overview': {
-                text: [
-                    'During the lockdown we’ve been doing a weekly video chat quiz and it was suggested that we could use a buzzer app that accounts for the connection delays.', 
-                    'I put this together recently over a couple of weekends.'
-                ],
-                display: {
-                    image: 'u-buzz-tap.jpg'
-                } 
-            },
-            'Design': {
-                link: '',
             }
         }
     },
@@ -136,25 +181,11 @@ const projects = [
             'Overview': {
                 text: [
                     'Programmed in C/Arduino, I made this with three modes stopwatch/pomodoro/counter.',
-                    'Simple and reliable bit of code I use everyday. The big button makes this device, giving it an easy of use a notch above commercial devices I could find.'
+                    'Simple and reliable bit of code I use everyday. The big button makes this device, giving it an ease of use a notch above commercial devices I could find.'
                 ],
                 display: {
                     image: 'big-button-timer.jpg'
                 } 
-            }
-        }
-    },
-    {
-        title: 'grid',
-        repo: 'https://github.com/lily-law/grid',
-        icons: ['npm', 'js'],
-        description: 'A JavaScript grid arrays constructor',
-        points: {
-            'Overview': {
-                text: [
-                    'I made this while working on implimenting a sudoku engine/generator.',
-                    'It\'s API will translate a given array into rows/coloumns/diagonals/blocks/nths and convert an index to coordinate and vice versa.'
-                ]
             }
         }
     },
