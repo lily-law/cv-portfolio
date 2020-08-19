@@ -14,22 +14,22 @@ const projects = [
         points: {
             'Overview': {
                 text: [
-                    `Backend on this is a simple node.js express server, which 
+                    `Backend on this is a simple node.js express server, which
                     expose two main routes: /api/photos/ and /api/manifests/.`,
-                    `These are used as a gateway to NASA's Mars Photos API, 
-                    protecting my private API key and reducing any unnecessary 
+                    `These are used as a gateway to NASA's Mars Photos API,
+                    protecting my private API key and reducing any unnecessary
                     outbound requests.
-                    Behind these two routes I've created 
+                    Behind these two routes I've created
                     four API methods:`,
-                    ` - getPhotoList: calls NASA's API and returns an array of 
-                     upto 25 photo data objects and a url used by the client for 
-                     pagenation (shortcut link to the next set of upto 25)
-                    `,` - getManifest: calls NASA's API and returns a summary of 
-                     the data available on given rover, this is used in the 
-                     client to limit the avalible filters and queries, this way a 
-                     users search will never return an empty result 
-                    `,` - validatePhotosRequest and validateManifestRequest: checks 
-                     if any of the request parameters are invalid and returns 
+                    ` - getPhotoList: calls NASA's API and returns an array of
+                     upto 25 photo data objects and a url used by the client for
+                     pagination (shortcut link to the next set of upto 25)
+                    `,` - getManifest: calls NASA's API and returns a summary of
+                     the data available on given rover, this is used in the
+                     client to limit the available filters and queries, this way a
+                     users search will never return an empty result
+                    `,` - validatePhotosRequest and validateManifestRequest: checks
+                     if any of the request parameters are invalid and returns
                      user friendly error messages
                     `
                 ],
@@ -39,11 +39,11 @@ const projects = [
             },
             'Design': {
                 text: [
-                    `For the frontend I've kept it simple and clean. By creating a 
-                    collapsable sidebar UI, development on this was quick and easy. 
+                    `For the frontend I've kept it simple and clean. By creating a
+                    collapsible sidebar UI, development on this was quick and easy.
                     Users are able to search for Mars rover photos, scroll through
-                    all result (pagination is automatically triggered), and click 
-                    on results for a full view. A status component keeps users 
+                    all result (pagination is automatically triggered), and click
+                    on results for a full view. A status component keeps users
                     informed about the apps current processes, completed tasks, and
                     any errors.`
                 ],
@@ -51,13 +51,13 @@ const projects = [
                     image: 'mars-photo-api-2.png'
                 }
             },
-            
+           
         }
     },
     {
-        title: 'White Raven', 
-        link: 'https://white-raven.co.uk', 
-        icons: ['react', 'xd'], 
+        title: 'White Raven',
+        link: 'https://white-raven.co.uk',
+        icons: ['react', 'xd'],
         description: 'Unique web design and developments for an Animal Communicator',
         points: {
             'Overview': {
@@ -68,12 +68,12 @@ const projects = [
                 ],
                 display: {
                     image: 'white-raven.png'
-                } 
+                }
             },
             'Booking System': {
                 text: [
-                    `For each booking the client requires a fair chunk of infomation from users, 
-                    so make this less daunting I created a booking modal that breaks this down 
+                    `For each booking the client requires a fair chunk of information from users,
+                    to make this less daunting I created a booking modal that breaks this down
                     into smaller steps.`,
                 ],
                 display: {
@@ -91,30 +91,30 @@ const projects = [
         points: {
             'Overview': {
                 text: [
-                    `During the lockdown we’ve been doing a weekly video chat quiz and it was 
-                    suggested that we could use a buzzer app that accounts for the connection delays.`, 
-                    `Anyone can create a session and using the url can invite anyone to join. In session 
+                    `During the lockdown we’ve been doing a weekly video chat quiz and it was
+                    suggested that we could use a buzzer app that accounts for the connection delays.`,
+                    `Anyone can create a session and using the url can invite anyone to join. In session
                     users get a simple view of who's joined and a big button to buzz in with.`,
                     `My aim for this app was to make it to the point, simple, and cheap to host`,
-                    `Each session url contains everything needed to revive it's self without the server 
+                    `Each session url contains everything needed to revive it's self without the server
                     needing to store anything.`
                 ],
                 display: {
                     image: 'u-buzz-tap.png'
-                } 
+                }
             },
             'The Buzz Process' : {
                 text: [
-                    `When a user hits the buzzer and the server recieves a 'buzzed' event, it sends 
+                    `When a user hits the buzzer and the server receives a 'buzzed' event, it sends
                     out a ping to each client. Once each client has responded to the ping
-                    the server can end the round and announce the winner.`, `If between the ping process the server 
-                    recieves a 'buzzed' event from another user it calculates when their buzzer was activated, 
-                    accounting for connection delays and then announces all who buzzed and how many milliseconds 
+                    the server can end the round and announce the winner.`, `If between the ping process the server
+                    receives a 'buzzed' event from another user it calculates when their buzzer was activated,
+                    accounting for connection delays and then announces all who buzzed and how many milliseconds
                     runner ups were out by`
                 ],
                 display: {
                     image: 'u-buzz-tap-2.png'
-                } 
+                }
             }
         }
     },
@@ -128,20 +128,20 @@ const projects = [
             'Overview': {
                 text: [
                     'Voyage 18: Team project on Chingu',
-                    `During this project I learnt how to work transparently with others, while improving 
+                    `During this project I learnt how to work transparently with others, while improving
                     my communication and planning skills.`,
                 ],
                 display: {
                     image: 'wavy.jpg'
-                } 
+                }
             }
         }
-    }, 
+    },
     {
-        title: 'Dashy', 
-        link: 'https://v16-geckos-2-production.netlify.com/', 
+        title: 'Dashy',
+        link: 'https://v16-geckos-2-production.netlify.com/',
         repo: 'https://github.com/chingu-voyages/v16-geckos-team-02',
-        icons: ['chingu', 'svelte', 'xd'], 
+        icons: ['chingu', 'svelte', 'xd'],
         description: 'v16-geckos-team-02 - A Chingu team project',
         points: {
             'Overview': {
@@ -151,15 +151,15 @@ const projects = [
                 ],
                 display: {
                     image: 'dashy.jpg'
-                } 
+                }
             }
         }
     },
     {
-        title: 'Solo-Koala-54', 
-        link: 'https://chingu-solo.github.io/solo-koala-54/', 
+        title: 'Solo-Koala-54',
+        link: 'https://chingu-solo.github.io/solo-koala-54/',
         repo: 'https://github.com/Chingu-Solo/solo-koala-54',
-        icons: ['chingu', 'svelte', 'xd'], 
+        icons: ['chingu', 'svelte', 'xd'],
         description: 'A reimplementation of Google Fonts',
         points: {
             'Overview': {
@@ -168,7 +168,7 @@ const projects = [
                 ],
                 display: {
                     image: 'solo-koala-54.jpg'
-                } 
+                }
             }
         }
     },
@@ -185,10 +185,10 @@ const projects = [
                 ],
                 display: {
                     image: 'big-button-timer.jpg'
-                } 
+                }
             }
         }
-    },
+    }, 
 ]
 
 const Portfolio = () => {
