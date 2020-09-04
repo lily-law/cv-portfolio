@@ -207,6 +207,30 @@ const Cv = () => {
                     text-align: center;
                 }
             }
+            @media only screen and (max-width: 420px) {
+                main {
+                    grid-template-columns: 1fr;
+                    grid-template-areas: 
+                    "header"
+                    "left" 
+                    "right";
+                }
+                article {
+                    margin-top: 10%;
+                    margin-left: 0%;
+                    background: var(--blue-d);
+                    border: 1px solid var(--grey-xl);
+                    padding: 5%;
+                    width: 70%;
+                }
+                aside {
+                    margin: 10% 0 10% 20%;
+                    background: var(--blue-d);
+                    border: 1px solid var(--grey-xl);
+                    padding: 5%;
+                    width: 70%;
+                }
+            }
         `}</style>
     </Fragment>
     )
