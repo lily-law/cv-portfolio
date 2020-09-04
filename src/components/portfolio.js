@@ -10,28 +10,20 @@ const projects = [
         link: 'https://chingu-solo-mars-rover-api.herokuapp.com/',
         repo: 'https://github.com/lily-law/chingu-solo-mars-rover-project',
         icons: ['nodejs', 'react'],
-        description: 'Web app to search and view photos taken by mars rovers. A Chingu solo project.',
+        description: 'Web app to search and view photos taken by mars rovers. A Chingu solo project',
         points: {
             'Overview': {
                 text: [
-                    `Backend on this is a simple node.js express server, which
-                    expose two main routes: /api/photos/ and /api/manifests/.`,
-                    `These are used as a gateway to NASA's Mars Photos API,
-                    protecting my private API key and reducing any unnecessary
-                    outbound requests.
-                    Behind these two routes I've created
-                    four API methods:`,
-                    ` - getPhotoList: calls NASA's API and returns an array of
-                     upto 25 photo data objects and a url used by the client for
-                     pagination (shortcut link to the next set of upto 25)
-                    `,` - getManifest: calls NASA's API and returns a summary of
-                     the data available on given rover, this is used in the
-                     client to limit the available filters and queries, this way a
-                     users search will never return an empty result
-                    `,` - validatePhotosRequest and validateManifestRequest: checks
-                     if any of the request parameters are invalid and returns
-                     user friendly error messages
-                    `
+                    `A simple node.js express server forms the backend. It has two main routes exposed, /api/photos/ and /api/manifests/.`,
+                    `These are used as a gateway to NASA's Mars Photos API (NMPA), protecting my private API key and reducing any unnecessary outbound requests.`,
+                    `These two routes call on four API methods:
+                    `,
+                    `- getPhotoList fetches photo data from NMPA and returns: `,
+                    `  - An array of upto 25 photo data objects`,
+                    `  - A URL used by the client for pagination (a shortcut link to request the next set of photos)`,
+                    `- getManifest fetches manifest data from NMPA and returns a summary of the data available on a given rover. This summary is used in the client to limit the available filters and queries. A users search will never return an empty result`,
+                    `- validatePhotosRequest checks if any of the request parameters are invalid and returns user friendly error messages`,
+                    `- validateManifestRequest checks a given rover name against a list of valid rover names`
                 ],
                 display: {
                     image: 'mars-photo-api.png'
@@ -39,13 +31,7 @@ const projects = [
             },
             'Design': {
                 text: [
-                    `For the frontend I've kept it simple and clean. By creating a
-                    collapsible sidebar UI, development on this was quick and easy.
-                    Users are able to search for Mars rover photos, scroll through
-                    all result (pagination is automatically triggered), and click
-                    on results for a full view. A status component keeps users
-                    informed about the apps current processes, completed tasks, and
-                    any errors.`
+                    `For the frontend I've kept it simple and clean. By creating a collapsible sidebar UI, development on this was quick and easy. Users are able to search for Mars rover photos, scroll through all results (pagination is automatically triggered), and click on results for a full view. A status component keeps users informed about the apps current processes, completed tasks, and any errors.`
                 ],
                 display: {
                     image: 'mars-photo-api-2.png'
@@ -62,9 +48,9 @@ const projects = [
         points: {
             'Overview': {
                 text: [
-                    `The landing page has animated drifting clouds as an easter egg.`,
-                    `I allocated a large chunk of the time spent on this project to the design.
-                    The client desired something unique, bright, and natureful`
+                    `I allocated a large chunk of the time spent on this project to the design. The client desired something unique, bright, and natureful.`,
+                    `The landing page has an easter egg of animated drifting clouds. I’ve used a dual tone background to help break up content. On the Communication page by having the photo overlap the dual tones I’ve created impact. I’ve used my image editing skills to enhance the client's photo of herself and also to create the White Raven logo.`,
+                    `For the communications page I’ve created a custom booking system and Q&A search modal.`
                 ],
                 display: {
                     image: 'white-raven.png'
@@ -72,9 +58,9 @@ const projects = [
             },
             'Booking System': {
                 text: [
-                    `For each booking the client requires a fair chunk of information from users,
-                    to make this less daunting I created a booking modal that breaks this down
-                    into smaller steps.`,
+                    `For each booking the client requires a fair chunk of information from users. To make this less daunting I’ve created a booking system that breaks this down into smaller steps.`,
+                    `I’ve scripted a simple PHP backend to handle sending the information and photo as an email to the client and confirmation email to the user.`,
+                    `The booking system handles payments using Paypal’s API.`
                 ],
                 display: {
                     image: 'white-raven-2.png'
