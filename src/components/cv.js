@@ -1,23 +1,22 @@
 import React, {Fragment} from "react"
 import Icon from "./icon"
 import { Link } from "gatsby"
-import cv from "../images/nav/cv.svg"
 
 const Cv = () => {
     return (
     <Fragment>
         <div id="cv" className="cv">
+        <div className="title-for-print-media">
+                    <h1>lilylaw.github.io | CV</h1>
+                </div>
             <header className="heading">
                 <Link to="/">
-                    <h1><img src={cv} alt="CV" /></h1>
+                    <h1>CV</h1>
                 </Link>
             </header>
             <main>
                 <article>
-                    <figure>
-                        <figcaption><Icon name="lilylaw" /></figcaption>
-                        <h2>Frontend Web Developer</h2>
-                    </figure> 
+                    <h2>Frontend Web Developer</h2>
                     <section>
                         <p>I began learning to code with some downtime after having surgery and I've been hooked since.</p>
                         <p>My ethos is to stay fairly tech stack agnostic and focus on the language and best programming practices.</p>
@@ -62,7 +61,7 @@ const Cv = () => {
                             <h3>Skills</h3>
                         </header>
                         <figure>
-                            <Icon name="js" className="big" />
+                            <Icon name="js" className="big" />  
                         </figure>
                         <div className="icons">
                             <Icon name="react" />
@@ -119,6 +118,9 @@ const Cv = () => {
                 overflow-x: hidden;
                 font-family: var(--flow-font-family);
             }
+            h1 {
+                color: var(--blue-d)
+            }
             .heading {
                 margin: 0;
                 grid-area: header;
@@ -141,7 +143,7 @@ const Cv = () => {
                 grid-template-areas: 
                 "header header"
                 "left right";
-                align-items: stretch;
+                align-items: start;
             }
             article {
                 grid-area: left;
@@ -156,9 +158,8 @@ const Cv = () => {
             }
             header {
                 margin-top: 32px;
-                word-break: break-word;
             }
-            li {
+            article li {
                 list-style-type: none;
             }
             aside {
@@ -170,16 +171,9 @@ const Cv = () => {
             }
             aside section {
                 display: grid;
-                place-items: center center;
-            }
-            aside section header {
-                display: flex;
-                flex-flow: row wrap;
-                align-items: baseline;
-                justify-content: space-around;
+                place-items: center start;
             }
             figure {
-                text-align: center;
                 margin: 0;
             }
             figure img {
@@ -187,19 +181,31 @@ const Cv = () => {
                 max-width: 300px;
             }
             .icons {
-                padding: 8px;
                 padding-top: 0;
                 display: flex;
                 flex-flow: row wrap;
-                justify-content: space-around;
+                justify-content: flex-start;
+            } 
+            h4 {
+                opacity: 0.8;
             }
-            figcaption {
-                margin-top: -10%;
-            }  
-            h2, h3 {
-                font-family:  var(--point-font-family);
-                font-style: normal;
-                font-weight: 400;
+            .experience h4, .experience h5 {
+                margin: 0;
+            }
+            .title-for-print-media {
+                display: none;
+            }
+            @media print {
+                * {
+                    color: black;
+                }
+                .heading {
+                    display: none;
+                }
+                .title-for-print-media {
+                    display: block;
+                    text-align: center;
+                }
             }
         `}</style>
     </Fragment>

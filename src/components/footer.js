@@ -11,6 +11,9 @@ const Footer = () => {
             <div className="links">
                 <Contact />
             </div>
+            <div className="contact-info-for-print-media">
+                lilylaw.dev@gmail.com
+            </div>
         </footer>
         <style jsx>{`
             footer {
@@ -36,6 +39,19 @@ const Footer = () => {
                 grid-template-columns: repeat(4, 1fr);
                 width: 80%;
                 max-width: 480px;
+            }
+            .contact-info-for-print-media {
+                display: none;
+            }
+            @media print {
+                .contactForm, .links {
+                    display: none;
+                }
+                .contact-info-for-print-media {
+                    display: block;
+                    text-align: center;
+                    font-size: 32px;
+                }
             }
         `}</style>
     </Fragment>)

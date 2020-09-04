@@ -143,7 +143,7 @@ return (<Fragment>
         "lily-law cv cv links"
         "lily-law logo portfolio links"
         "lily-law logo portfolio links"
-        ". blog . links";
+        ". . . links";
     }
     @media (orientation: portrait) {
         .overlay {
@@ -198,15 +198,10 @@ return (<Fragment>
            margin-top: 14vw;
        }
     }
-    .blog {
-    grid-area: blog;
-    width: 10vh;
-    justify-self: end;
-    }
-    @media (orientation: portrait) {
-       .blog {
-            width: 10vw
-       }
+    @media print {
+        * {
+            display: none;
+        }
     }
     `}</style>
   </Fragment>)
