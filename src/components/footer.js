@@ -20,14 +20,16 @@ const Footer = () => {
                 min-height: 25vh;
                 background: linear-gradient(to right, var(--black), var(--yellow-d), var(--black));
                 display: grid;
-                place-items: center center;
+                align-items: center;
+                justify-items: center;
                 grid-template-rows: auto 1fr;
                 padding-bottom: 150px;
                 grid-gap: 32px;
             }
             div {
                 display: grid;
-                place-items: center center;
+                align-items: center;
+                justify-items: center;
             }
             .contactForm {
                 margin-top: 80px;
@@ -35,7 +37,8 @@ const Footer = () => {
             }
             .links {
                 display: grid;
-                place-items: center center;
+                align-items: center;
+                justify-items: center;
                 grid-template-columns: repeat(4, 1fr);
                 width: 80%;
                 max-width: 480px;

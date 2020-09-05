@@ -10,9 +10,9 @@ import SEO from "./seo"
 
 const Landing = () => {
 const [{ st }, set] = useSpring(() => ({ st: 0 }))
-const interpIcon = interpolate([st], (st) => `rotate(-${st}deg)`)
-const interpNav =  interpolate([st], (st) => `rotate(${st}deg)`)
-const onScroll = useCallback(e => set({ st: Math.min(Math.round(window.scrollY*(180 / (window.innerHeight/2))), 180) }), [set])
+const interpIcon = interpolate([st], (st) => `rotate(-${Math.ceil(st)}deg)`)
+const interpNav =  interpolate([st], (st) => `rotate(${Math.floor(st)}deg)`)
+const onScroll = useCallback(e => set({ st: Math.min(window.scrollY*(180 / (window.innerHeight/2)), 180) }), [set])
 useEffect(() => {
     window.onscroll = onScroll
 })
@@ -86,13 +86,15 @@ return (<Fragment>
             margin-top: 7vh;
             margin-left: 1vh;
             grid-area: logo;
-            place-self: start start;
+            align-self: start;
+            align-items: center;
+            justify-self: start;
         }
         @media (orientation: portrait) {
             .landing__logo {
                 width: 15vw;
-                margin-top: 7vw;
-                margin-left: 1vw;
+                margin-top: 6vw;
+                margin-left: 0;
             }
         }
     `}</style>
@@ -136,7 +138,8 @@ return (<Fragment>
         white-space: nowrap;
         pointer-events: none;
         display: grid;
-        place-items: center center;
+        align-items: center;
+        justify-items: center;
         grid-template-columns: 3fr 2fr 3.6fr 1.4fr;
         grid-template-rows: 3.5fr 1.5fr 3.5fr 1.5fr;
         grid-template-areas: 
@@ -147,7 +150,7 @@ return (<Fragment>
     }
     @media (orientation: portrait) {
         .overlay {
-            margin-left: calc(50% - 50%);
+            margin-left: 0;
             margin-top: calc(50vh - 50%);
             width: 100vw;
             height: 100vw;
@@ -182,9 +185,11 @@ return (<Fragment>
     flex-direction: column;
     align-content: space-around;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
     margin: 12vh 0;
-    place-self: stretch stretch;
+    align-self: stretch;
+    justify-self: stretch;
     pointer-events: auto;
     }
     .lily-law {

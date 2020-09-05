@@ -33,7 +33,8 @@ export default function Project({title, icons, description, index, feature, setF
                 "description icons"
                 "description icons";
                 margin-right: 24px;
-                place-items: center center;
+                align-items: center;
+                justify-items: center;
                 grid-template-columns: 1fr 1fr;
                 font-family: t26-carbon, monospace;
                 max-width: 550px;
@@ -76,7 +77,8 @@ export default function Project({title, icons, description, index, feature, setF
                     "header header"
                     "icons icons"
                     "description description";
-                    place-items: center end;
+                    align-items: center;
+                    justify-items: end;
                     max-width: 450px;
                 }
                

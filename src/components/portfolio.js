@@ -185,12 +185,12 @@ const Portfolio = () => {
                 let nTimes = Math.floor((Math.random() * 9) + 3)
                 const flick = async () => {
                     if (Math.floor(Math.floor((Math.random() * 2) + 0))) {
-                        await next({background: "radial-gradient(var(--yellow-d), black, black)"})
+                        await next({background: "radial-gradient(var(--yellow-d), transparent, transparent)"})
                     }
                     else {
-                        await next({background: "radial-gradient(var(--yellow-l), black, black)"})
+                        await next({background: "radial-gradient(var(--yellow-l), transparent, transparent)"})
                     }
-                    await next({background: "var(--black)"})
+                    await next({background: "var(--transparent)"})
                     if (--nTimes > 0) {
                         setTimeout(flick, (Math.floor((Math.random() * 20) + 5) * 10))
                     }
@@ -217,12 +217,19 @@ const Portfolio = () => {
         <div className={"portfolio-page"+(Number.isInteger(feature) ? " feature-active" : "")} id="portfolio">
             <header>
                 <animated.div style={animationProps} className="portfolio-page__header__overlay">
-                    <Link to="/">
-                        <h1>  
-                            Portfolio 
-                        </h1>
-                    </Link>
+                    <svg className="portfolio-page__header__overlay__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 100" preserveAspectRatio="none">
+                        <g id="portfolio" transform="translate(0 -1582)">
+                        <path id="Subtraction_5" data-name="Subtraction 5" d="M706,44H616L526-56H706V44ZM436,44H346V-56H526L436,44Z" transform="translate(-346 1638)" fill="#003"/>
+                            <Link to="/">
+                            <path d="M90,0l90,100H0Z" transform="translate(90 1582)" fill="#505050"/>
+                            </Link>
+                        </g>
+                    </svg>
+                    <h1>Portfolio</h1>
                 </animated.div>
+                <svg className="portfolio-page__header__background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 100" preserveAspectRatio="none">
+                    <path d="M180,0,360,100H0Z"/>
+                </svg>
             </header>
             <main>
                 {projects.map((data, index) => <Project key={data.title} {...{...data, index, feature, setFeature: handleSetFeature}} />)}
@@ -235,13 +242,14 @@ const Portfolio = () => {
                 width: 100%;
                 height: 100%;
                 position: absolute;
-                top: 1px;
+                display: grid;
+                justify-items: center;
+                z-index: 50;
                 clip-path: polygon(50% 0, 0 100%, 100% 100%);
                 shape-outside: polygon(50% 100%, 0 0, 100% 0);
-                background: var(--black);
             }
             .feature-active .portfolio-page__header__overlay {
-                background: linear-gradient(to right, black, var(--yellow-l), black);
+                background: linear-gradient(to right, transparent, var(--yellow-l), transparent);
             }
         `}</style>
         <style jsx>{`
@@ -255,7 +263,7 @@ const Portfolio = () => {
                 overflow-x: hidden;
             }
             .feature-active {
-                background: linear-gradient(to right, black, var(--yellow-l), black);
+                background: linear-gradient(to right, transparent, var(--yellow-l), transparent);
             }
             header {
                 width: 100%;
@@ -265,25 +273,41 @@ const Portfolio = () => {
                 top: 0;
                 background: var(--blue-d);
                 display: grid;
-                place-items: start center;
+                align-items: start;
+                justify-items: center;
+            }
+            .portfolio-page__header__overlay__svg {
+                margin: -2px;
+                width: 100%;
+                height: 100px;
+                padding-bottom: 16px;
+                z-index: 75;
             }
             header h1 {
                 margin: 0;
-                width: 100%;
-                height: 100px;
-                clip-path: polygon(50% 0, 0 100%, 100% 100%);
-                shape-outside: polygon(50% 100%, 0 0, 100% 0);
-                background: var(--grey-xd);
-                display: grid;
-                place-items: end center;
-                padding-bottom: 16px;
+                line-height: 100%;
+                position: absolute;
+                top: 25%;
                 color: var(--black);
+                text-align: center;
+                width: 100%;
+                pointer-events: none;
                 font-family: var(--flow-font-family);
+                z-index: 100;
+                letter-spacing: 2px;
+                font-size: 38px;
+            }
+            .portfolio-page__header__background {
+                width: 100%;
+                height: 200px;
+                fill: var(--black);
+                z-index: 25;
             }
             main {
                 position: relative;
                 display: grid;
-                place-items: end center;
+                align-items: end;
+                justify-items: center;
                 grid-template-columns: repeat(3, auto);
                 padding: 5vw;
             }
@@ -295,6 +319,10 @@ const Portfolio = () => {
             @media only screen and (max-width: 1200px) {
                 main {
                     grid-template-columns: repeat(1, auto);
+                }
+                header h1 {
+                    font-size: calc(14px + 2vw);
+                    top: calc(35% - 2vw);
                 }
             }
             @media print {

@@ -9,11 +9,16 @@ const Cv = () => {
         <div className="title-for-print-media">
                     <h1>lilylaw.github.io | CV</h1>
                 </div>
-            <header className="heading">
-                <Link to="/">
+                <header className="heading">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 180" preserveAspectRatio="none">
+                        <Link to="/">
+                            <g transform="translate(360 180) rotate(180)" fill="#a6a6a6">
+                                <path d="M 358.7929077148438 179.5 L 1.207075595855713 179.5 L 179.9999847412109 0.7070909142494202 L 358.7929077148438 179.5 Z"/>
+                            </g>
+                        </Link>
+                    </svg>
                     <h1>CV</h1>
-                </Link>
-            </header>
+                </header>
             <main>
                 <article>
                     <h2>Frontend Web Developer</h2>
@@ -118,22 +123,30 @@ const Cv = () => {
                 overflow-x: hidden;
                 font-family: var(--flow-font-family);
             }
-            h1 {
-                color: var(--blue-d)
-            }
             .heading {
                 margin: 0;
+                margin-top: -1px;
+                margin-left: -2%;
                 grid-area: header;
+                width: 104%;
+                display: grid;
+                position: relative;
+            }
+            .heading svg {
                 width: 100%;
                 height: 150px;
-                clip-path: polygon(50% 100%, 0 0, 100% 0);
-                shape-outside: polygon(50% 100%, 0 0, 100% 0);
-                background: var(--grey-l);
-                display: grid;
-                place-items: center center;
             }
-            .heading img {
-                transform: scaleY(-1) rotate(180deg);
+            .heading h1 {
+                margin: 0;
+                line-height: 100%;
+                color: var(--blue-d);
+                position: absolute;
+                top: 10%;
+                text-align: center;
+                width: 100%;
+                font-size: 86px;
+                pointer-events: none;
+                letter-spacing: 4px;
             }
             main {
                 width: 100%;
@@ -148,7 +161,8 @@ const Cv = () => {
             article {
                 grid-area: left;
                 display: grid;
-                place-items: center end;
+                align-items: center;
+                justify-items: end;
                 align-content: center;
                 margin: 0 5vw;
                 text-align: right;
@@ -165,13 +179,15 @@ const Cv = () => {
             aside {
                 grid-area: right;
                 display: grid;
-                place-items: start start;
+                align-items: start;
+                justify-items: start;
                 align-content: center;
                 margin: 0 5vw;
             }
             aside section {
                 display: grid;
-                place-items: center start;
+                align-items: center;
+                justify-items: start;
             }
             figure {
                 margin: 0;

@@ -40,7 +40,8 @@ const Feature = ({ feature, projects }) => {
                 grid-column-start: span 3;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                place-items: start center;
+                align-items: start;
+                justify-items: center;
                 background: var(--blue-d);
                 color: var(--blue-l);
                 border: 3px solid var(--yellow-d);

@@ -19,7 +19,8 @@ const Links = ({nav, interpIcon}) => {
         <style jsx global>{`
             .landing__contact__link {
                 display: grid;
-                place-items: center center;
+                align-items: center;
+                justify-items: center;
             }
         `}</style>
     </Fragment>);

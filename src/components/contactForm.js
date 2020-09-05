@@ -54,7 +54,8 @@ const ContactForm = () => {
         <style jsx>{`
             .response {
                 display: grid;
-                place-items: center center;
+                align-items: center;
+                justify-items: center;
                 border: 1px solid var(--blue-l);
                 background: var(--blue-d);
                 padding: 16px;
@@ -105,7 +106,8 @@ const ContactForm = () => {
                 height: 450px;
                 width: 90%;
                 max-width: 550px;
-                place-items: center center;
+                align-items: center;
+                justify-items: center;
             }
             h1 {
                 color: var(--blue-l);
@@ -146,7 +148,8 @@ const ContactForm = () => {
                 width: 100%;
                 background: linear-gradient(to right, var(--blue-l), var(--blue-d), var(--blue-l));
                 display: grid;
-                place-items: center center;
+                align-items: center;
+                justify-items: center;
             }
             .send {
                 color: var(--yellow-d);
