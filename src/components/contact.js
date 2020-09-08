@@ -15,7 +15,7 @@ const Links = ({nav, interpIcon}) => {
         </a.div>
     );
     return (<Fragment>
-        {icons.map(icon => nav ? <Fragment key={icon+'motionicon'}>{addMotion(icon)}</Fragment> : <Icon key={icon+'icon'} name={icon} />)}
+        {icons.map(icon => nav ? <Fragment key={icon+'motionicon'}>{addMotion(icon)}</Fragment> : <Icon key={icon+'icon'} name={icon} link />)}
         <style jsx global>{`
             .landing__contact__link {
                 display: grid;
