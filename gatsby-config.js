@@ -6,6 +6,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-177632665-1",
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-styled-jsx`,
       options: {
         optimizeForSpeed: true,
