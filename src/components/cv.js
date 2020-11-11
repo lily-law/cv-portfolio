@@ -1,6 +1,7 @@
 import React, {Fragment} from "react"
 import Icon from "./icon"
 import { Link } from "gatsby"
+import MyCVImg from "../images/mycv.svg"
 
 const Cv = () => {
     return (
@@ -107,6 +108,12 @@ const Cv = () => {
                             <li>Curious and Persistent</li>
                         </ul>
                     </section>
+                    <figure>
+                        <figcaption>Download my CV to learn more</figcaption>
+                        <a href="/downloads/Lily Law CV.docx" download>
+                            <img className="my-cv-icon" src={MyCVImg} alt="" title="Lily Law's CV" />
+                        </a>
+                    </figure>
                 </aside>
             </main>
         </div>
@@ -210,6 +217,10 @@ const Cv = () => {
             }
             .title-for-print-media {
                 display: none;
+            }
+            .my-cv-icon {
+                margin-top: 12px;
+                max-height: 120px;
             }
             @media print {
                 * {
