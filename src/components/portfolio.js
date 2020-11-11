@@ -5,47 +5,12 @@ import {useSpring, animated} from 'react-spring';
 import Feature from './feature';
 
 const projects = [
-    {
-        title: 'Mars Photo API',
-        link: 'https://chingu-solo-mars-rover-api.herokuapp.com/',
-        repo: 'https://github.com/lily-law/chingu-solo-mars-rover-project',
-        icons: ['nodejs', 'react'],
-        description:
-            'Web app to search and view photos taken by mars rovers. A Chingu solo project',
-        points: {
-            'Overview': {
-                text: [
-                    `A simple node.js express server forms the backend. It has two main routes exposed, /api/photos/ and /api/manifests/.`,
-                    `These are used as a gateway to NASA's Mars Photos API (NMPA), protecting my private API key and reducing any unnecessary outbound requests.`,
-                    `These two routes call on four API methods:
-                    `,
-                    `- getPhotoList fetches photo data from NMPA and returns: `,
-                    `  - An array of upto 25 photo data objects`,
-                    `  - A URL used by the client for pagination (a shortcut link to request the next set of photos)`,
-                    `- getManifest fetches manifest data from NMPA and returns a summary of the data available on a given rover. This summary is used in the client to limit the available filters and queries. A users search will never return an empty result`,
-                    `- validatePhotosRequest checks if any of the request parameters are invalid and returns user friendly error messages`,
-                    `- validateManifestRequest checks a given rover name against a list of valid rover names`,
-                ],
-                display: {
-                    image: 'mars-photo-api.png',
-                },
-            },
-            'Design': {
-                text: [
-                    `For the frontend I've kept it simple and clean. By creating a collapsible sidebar UI, development on this was quick and easy. Users are able to search for Mars rover photos, scroll through all results (pagination is automatically triggered), and click on results for a full view. A status component keeps users informed about the apps current processes, completed tasks, and any errors.`,
-                ],
-                display: {
-                    image: 'mars-photo-api-2.png',
-                },
-            },
-        },
-    },
+    
     {
         title: 'White Raven',
         link: 'https://white-raven.co.uk',
         icons: ['react', 'xd'],
-        description:
-            'Unique web design and developments for an Animal Communicator',
+        description: 'Unique web design and developments for an Animal Communicator',
         points: {
             'Overview': {
                 text: [
@@ -68,6 +33,60 @@ const projects = [
                 },
             },
         },
+    },
+    {
+        title: 'Wavy',
+        link: 'https://chingu-voyages.github.io/v18-geckos-team-02/',
+        repo: 'https://github.com/chingu-voyages/v18-geckos-team-02',
+        icons: ['chingu', 'react', 'xd'],
+        description: 'A PWA that archives files into a visual timeline',
+        points: {
+            'Overview': {
+                text: [
+                    'Voyage 18: Team project on Chingu',
+                    `The project prototype centers around a cool timeline view of user uploaded files. Users are able to add files, view them in the timeline and download a save file.`,
+                    `In retrospect I would have done a lot on this project differently. It’s very frontend focused and would benefit by having a well designed service worker to handle the IndexedBD operations. This approach would also mean the prototype would more readily adapt to having a backend.`,
+                ],
+                display: {
+                    image: 'wavy.jpg',
+                },
+            },
+        },
+    },
+    {
+        title: 'Dashy',
+        link: 'https://v16-geckos-2-production.netlify.com/',
+        repo: 'https://github.com/chingu-voyages/v16-geckos-team-02',
+        icons: ['chingu', 'svelte', 'xd'],
+        description: 'v16-geckos-team-02 - A Chingu team project',
+        points: {
+            'Overview': {
+                text: [
+                    'Voyage 16: Team project on Chingu.',
+                    'This prototype allows users to create named dash boards with resizable and draggable text sticky widgets. Svelte, a new framework for everyone on the team made this project interesting to work on.',
+                ],
+                display: {
+                    image: 'dashy.gif',
+                },
+            },
+        },
+    },
+    {	
+        title: 'grid',	
+        repo: 'https://github.com/lily-law/grid',	
+        icons: ['npm', 'js'],	
+        description: 'A JavaScript grid arrays constructor',	
+        points: {	
+            'Overview': {	
+                text: [	
+                    'I made this grid constructor utility while working on implementing a sudoku engine/generator.',	
+                    'It translates a given array into grid constructs which means you can access and edit a grid of items via rows/columns/diagonals/blocks/nths.',
+                ],
+                display: {
+                    image: 'npm.svg',
+                },
+            }	
+        }	
     },
     {
         title: 'U Buzz Tap',
@@ -107,38 +126,35 @@ const projects = [
         },
     },
     {
-        title: 'Wavy',
-        link: 'https://chingu-voyages.github.io/v18-geckos-team-02/',
-        repo: 'https://github.com/chingu-voyages/v18-geckos-team-02',
-        icons: ['chingu', 'react', 'xd'],
-        description: 'A PWA that archives files into a visual timeline',
+        title: 'Mars Photo API',
+        link: 'https://chingu-solo-mars-rover-api.herokuapp.com/',
+        repo: 'https://github.com/lily-law/chingu-solo-mars-rover-project',
+        icons: ['nodejs', 'react'],
+        description: 'Web app to search and view photos taken by mars rovers. A Chingu solo project',
         points: {
             'Overview': {
                 text: [
-                    'Voyage 18: Team project on Chingu',
-                    `During this project I learnt how to work transparently with others, while improving
-                    my communication and planning skills.`,
+                    `A simple node.js express server forms the backend. It has two main routes exposed, /api/photos/ and /api/manifests/.`,
+                    `These are used as a gateway to NASA's Mars Photos API (NMPA), protecting my private API key and reducing any unnecessary outbound requests.`,
+                    `These two routes call on four API methods:
+                    `,
+                    `- getPhotoList fetches photo data from NMPA and returns: `,
+                    `  - An array of upto 25 photo data objects`,
+                    `  - A URL used by the client for pagination (a shortcut link to request the next set of photos)`,
+                    `- getManifest fetches manifest data from NMPA and returns a summary of the data available on a given rover. This summary is used in the client to limit the available filters and queries. A users search will never return an empty result`,
+                    `- validatePhotosRequest checks if any of the request parameters are invalid and returns user friendly error messages`,
+                    `- validateManifestRequest checks a given rover name against a list of valid rover names`,
                 ],
                 display: {
-                    image: 'wavy.jpg',
+                    image: 'mars-photo-api.png',
                 },
             },
-        },
-    },
-    {
-        title: 'Dashy',
-        link: 'https://v16-geckos-2-production.netlify.com/',
-        repo: 'https://github.com/chingu-voyages/v16-geckos-team-02',
-        icons: ['chingu', 'svelte', 'xd'],
-        description: 'v16-geckos-team-02 - A Chingu team project',
-        points: {
-            'Overview': {
+            'Design': {
                 text: [
-                    'Voyage 16: Team project on Chingu. Working with and learning a new framework, Svelte made this project interesting to work on.',
-                    'This ended as a solo effort and it taught me about the value of momentum and perseverance.',
+                    `For the frontend I've kept it simple and clean. By creating a collapsible sidebar UI, development on this was quick and easy. Users are able to search for Mars rover photos, scroll through all results (pagination is automatically triggered), and click on results for a full view. A status component keeps users informed about the apps current processes, completed tasks, and any errors.`,
                 ],
                 display: {
-                    image: 'dashy.jpg',
+                    image: 'mars-photo-api-2.png',
                 },
             },
         },
