@@ -96,7 +96,7 @@ const icons = {
     mydiscord: {
         img: 'discord.svg',
         title: 'Lily Law\'s Discord Server - Come in and chat!',
-        link: 'https://discord.gg/2wB67u'
+        link: 'https://discord.com/invite/aMzzSBVENg'
     },
     mygithub: {
         img: 'mygithub.svg',
