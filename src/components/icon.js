@@ -122,6 +122,16 @@ const icons = {
         img: 'octocat.png',
         title: 'GitHub - Brings together the world\'s largest community of developers to discover, share, and build better software',
         link: 'https://github.com/'
+    },
+    mylinkedin: {
+      img: 'mylinkedin.png',
+      title: 'Lily Law\'s Linkedin profile',
+      link: 'https://www.linkedin.com/in/lily-law-66602b1a3/',
+    },
+    git: {
+      img: 'giticon.png',
+      title: 'Git - A distributed version-control system for tracking changes in source code during software development',
+      link: 'https://git-scm.com/'
     }
 }
 
