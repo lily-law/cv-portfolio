@@ -7,24 +7,25 @@ const Cv = () => {
     return (
     <Fragment>
         <div id="cv" className="cv">
-        <div className="title-for-print-media">
-                    <h1>lilylaw.github.io | CV</h1>
-                </div>
-                <header className="heading">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 180" preserveAspectRatio="none">
-                        <Link to="/">
-                            <g transform="translate(360 180) rotate(180)" fill="#a6a6a6">
-                                <path d="M 358.7929077148438 179.5 L 1.207075595855713 179.5 L 179.9999847412109 0.7070909142494202 L 358.7929077148438 179.5 Z"/>
-                            </g>
-                        </Link>
-                    </svg>
-                    <h1>CV</h1>
-                </header>
+            <div className="title-for-print-media">
+                <p>Lily Law | CV | lilylaw.github.io</p>
+            </div>
+            <header className="heading">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 180" preserveAspectRatio="none">
+                    <Link to="/">
+                        <g transform="translate(360 180) rotate(180)" fill="#a6a6a6">
+                            <path d="M 358.7929077148438 179.5 L 1.207075595855713 179.5 L 179.9999847412109 0.7070909142494202 L 358.7929077148438 179.5 Z"/>
+                        </g>
+                    </Link>
+                </svg>
+                <h1>CV</h1>
+            </header>
             <main>
                 <article>
                     <h2>Frontend Web Developer</h2>
                     <section>
-                        <p>I began learning to code with some downtime after having surgery and I've been hooked since.</p>
+                        <p>I began learning to code with some downtime after having surgery on 2017 and I've been hooked since.</p>
+                        <p>I started my career freelancing as a web developer/designer at the start of 2019.</p>
                         <p>My ethos is to stay fairly tech stack agnostic and focus on the language and best programming practices.</p>
                         <p>Often quick to learn and adapt, I enjoy the challenge and constant need to shift perspective when learning new tech</p>
                     </section>
@@ -34,7 +35,15 @@ const Cv = () => {
                         </header>
                         <ul>
                             <li>
-                                <h4>Facilitator at Chingu.io</h4>
+                                <h4>Freelance Web Developer and Designer</h4>
+                                <h5>01/2019 - present</h5>
+                                <p>
+                                    This role taught me a ton about real world development. 
+                                    It set me on the path to building the self discipline I have now and has reassured me I'm headed in the right direction.
+                                </p>
+                            </li>
+                            <li>
+                                <h4>Volunteer Facilitator at Chingu.io</h4>
                                 <h5>04/2020 - present</h5>
                                 <p>
                                     In this role I evaluate solo project submissions. I've also played a part in planning, 
@@ -48,14 +57,6 @@ const Cv = () => {
                                     I've worked in several teams so far on these 6 week agile developer projects. 
                                     Each time I've gained a treasure trove of insight about my strengths and weaknesses.
                                     One of the most valuable lessons I've learned from them is how integral planning is.
-                                </p>
-                            </li>
-                            <li>
-                                <h4>Freelance Web Designer and Developer</h4>
-                                <h5>01/2019 - 12/2019</h5>
-                                <p>
-                                    This role taught me a ton about real world development. 
-                                    It set me on the path to building the self discipline I have now and has reassured me I'm headed in the right direction.
                                 </p>
                             </li>
                         </ul>
@@ -74,6 +75,8 @@ const Cv = () => {
                             <Icon name="xd" />
                             <Icon name="css" />
                             <Icon name="html5" />
+                            <Icon name="git" />
+                            <Icon name="nodejs" />
                         </div>   
                         <ul>
                             <li>JavaScript</li>
@@ -82,6 +85,7 @@ const Cv = () => {
                             <li>CSS</li>
                             <li>HTML</li>
                             <li>git</li>
+                            <li>nodeJS</li>
                         </ul>
                     </section>
                     <section>
