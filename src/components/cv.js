@@ -35,18 +35,14 @@ const Cv = () => {
                                 hooked since.
                             </p>
                             <p>
+                                I’m driven by a love for intuitive UI.
+                            </p>
+                            <p>
                                 I started my career freelancing as a web
                                 developer/designer at the start of 2019.
                             </p>
                             <p>
-                                My ethos is to stay fairly tech stack agnostic
-                                and focus on the language and best programming
-                                practices.
-                            </p>
-                            <p>
-                                Often quick to learn and adapt, I enjoy the
-                                challenge and constant need to shift perspective
-                                when learning new tech
+                                During a project I’m either taking the lead or a keen participant in keeping a concise plan throughout the project’s lifecycle.
                             </p>
                         </section>
                         <section className="experience">
@@ -103,6 +99,7 @@ const Cv = () => {
                                 <Icon name="js" className="big" />
                             </figure>
                             <div className="icons">
+                                <Icon name="typescript" />
                                 <Icon name="react" />
                                 <Icon name="xd" />
                                 <Icon name="css" />
@@ -112,6 +109,7 @@ const Cv = () => {
                             </div>
                             <ul>
                                 <li>JavaScript</li>
+                                <li>TypeScript</li>
                                 <li>React</li>
                                 <li>Adobe XD</li>
                                 <li>CSS</li>
@@ -126,11 +124,13 @@ const Cv = () => {
                                 <Icon name="agile" />
                                 <Icon name="chingu" />
                                 <Icon name="github" />
+                                <Icon name="figma" />
                             </div>
                             <ul>
                                 <li>Agile</li>
                                 <li>Chingu</li>
                                 <li>GitHub</li>
+                                <li>Figma</li>
                             </ul>
                         </section>
                         <section>
@@ -152,7 +152,7 @@ const Cv = () => {
                                 <img
                                     className="my-cv-icon"
                                     src={MyCVImg}
-                                    alt=""
+                                    alt="CV docx"
                                     title="Lily Law's CV"
                                 />
                             </a>
