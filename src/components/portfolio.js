@@ -5,11 +5,35 @@ import {useSpring, animated} from 'react-spring';
 import Feature from './feature';
 
 const projects = [
-    
+    {
+        title: 'SyncedUp',
+        link: 'https://syncedup.live',
+        repo: 'https://github.com/chingu-voyages/v25-bears-team-05',
+        icons: ['chingu', 'typescript', 'react', 'nodejs', 'mongodb', 'figma'],
+        description: 'LinkedIn style developers community PWA',
+        points: {
+            'Overview': {
+                text: [
+                    `This is an ongoing Chingu team project. We’re using Typescript, with React and redux on the frontend and a nodeJs Express server with MongoDB as our backend API.`,
+                ],
+                display: {
+                    image: 'syncedup-landing.png',
+                },
+            },
+            'Design': {
+                text: [
+                    `We’ve used Figma to design our app and also to sketch up plans to help coordinate our data structure and development.`,
+                ],
+                display: {
+                    image: 'syncedup-figma.png',
+                },
+            },
+        },
+    },
     {
         title: 'White Raven',
         link: 'https://white-raven.co.uk',
-        icons: ['react', 'xd'],
+        icons: ['react', 'xd', 'php'],
         description: 'Unique web design and developments for an Animal Communicator',
         points: {
             'Overview': {
@@ -74,7 +98,7 @@ const projects = [
     {	
         title: 'grid',	
         repo: 'https://github.com/lily-law/grid',	
-        icons: ['npm', 'js'],	
+        icons: ['npm', 'typescript'],	
         description: 'A JavaScript grid arrays constructor',	
         points: {	
             'Overview': {	

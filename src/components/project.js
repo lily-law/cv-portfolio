@@ -75,6 +75,7 @@ export default function Project({
                     grid-area: icons;
                     display: inline-flex;
                     flex-flow: row wrap;
+                    justify-content: center;
                 }
                 .screenshot {
                     grid-area: screenshot;
