@@ -146,6 +146,21 @@ const icons = {
             'Git - A distributed version-control system for tracking changes in source code during software development',
         link: 'https://git-scm.com/',
     },
+    typescript: {
+        img: 'typescript.svg',
+        title: 'TypeScript - A strict syntactical superset of JavaScript',
+        link: 'https://www.typescriptlang.org/'
+    },
+    mongodb: {
+        img: 'mongodb.svg',
+        title: 'MongoDB - A source-available cross-platform document-oriented database program',
+        link: 'https://www.mongodb.com/'
+    },
+    figma: {
+        img: 'figma.svg',
+        title: 'Figma - A vector graphics editor and prototyping tool',
+        link: 'https://www.figma.com/'
+    }
 };
 
 const Icon = ({name, className = '', link}) => {
