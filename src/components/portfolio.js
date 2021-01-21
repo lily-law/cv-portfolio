@@ -6,6 +6,7 @@ import Feature from './feature';
 import bigButtonTimer from '../images/projects/big-button-timer.jpg';
 import dashy from '../images/projects/dashy.gif';
 import marsPhotoApi from '../images/projects/mars-photo-api.png';
+import marsPhotoApi2 from '../images/projects/mars-photo-api-2.png';
 import npm from '../images/projects/npm.svg';
 import soloKoala54 from '../images/projects/solo-koala-54.jpg';
 import syncedupFigma from '../images/projects/syncedup-figma.png';
@@ -192,7 +193,7 @@ const projects = [
                     `For the frontend I've kept it simple and clean. By creating a collapsible sidebar UI, development on this was quick and easy. Users are able to search for Mars rover photos, scroll through all results (pagination is automatically triggered), and click on results for a full view. A status component keeps users informed about the apps current processes, completed tasks, and any errors.`,
                 ],
                 display: {
-                    image: 'mars-photo-api-2.png',
+                    image: marsPhotoApi2,
                 },
             },
         },
