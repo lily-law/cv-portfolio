@@ -19,7 +19,7 @@ const Feature = ({feature, projects}) => {
                 <figure>
                     {activeProject?.display?.image && (
                         <img
-                            src={'/projects/' + activeProject.display.image}
+                            src={activeProject.display.image}
                             alt=""
                         />
                     )}

@@ -3,6 +3,18 @@ import Project from './project.js';
 import {Link} from 'gatsby';
 import {useSpring, animated} from 'react-spring';
 import Feature from './feature';
+import bigButtonTimer from '../images/projects/big-button-timer.jpg';
+import dashy from '../images/projects/dashy.gif';
+import marsPhotoApi from '../images/projects/mars-photo-api.png';
+import npm from '../images/projects/npm.svg';
+import soloKoala54 from '../images/projects/solo-koala-54.jpg';
+import syncedupFigma from '../images/projects/syncedup-figma.png';
+import syncedupLanding from '../images/projects/syncedup-landing.png';
+import uBuzzTap2 from '../images/projects/u-buzz-tap-2.png';
+import uBuzzTap from '../images/projects/u-buzz-tap.png';
+import wavy from '../images/projects/wavy.jpg';
+import whiteRaven2 from '../images/projects/white-raven-2.png';
+import whiteRaven from '../images/projects/white-raven.png';
 
 const projects = [
     {
@@ -17,7 +29,7 @@ const projects = [
                     `This is an ongoing Chingu team project. We’re using Typescript, with React and redux on the frontend and a nodeJs Express server with MongoDB as our backend API.`,
                 ],
                 display: {
-                    image: 'syncedup-landing.png',
+                    image: syncedupLanding,
                 },
             },
             'Design': {
@@ -25,7 +37,7 @@ const projects = [
                     `We’ve used Figma to design our app and also to sketch up plans to help coordinate our data structure and development.`,
                 ],
                 display: {
-                    image: 'syncedup-figma.png',
+                    image: syncedupFigma,
                 },
             },
         },
@@ -34,7 +46,8 @@ const projects = [
         title: 'White Raven',
         link: 'https://white-raven.co.uk',
         icons: ['react', 'xd', 'php'],
-        description: 'Unique web design and developments for an Animal Communicator',
+        description:
+            'Unique web design and developments for an Animal Communicator',
         points: {
             'Overview': {
                 text: [
@@ -43,7 +56,7 @@ const projects = [
                     `For the communications page I’ve created a custom booking system and Q&A search modal.`,
                 ],
                 display: {
-                    image: 'white-raven.png',
+                    image: whiteRaven,
                 },
             },
             'Booking System': {
@@ -53,7 +66,7 @@ const projects = [
                     `The booking system handles payments using Paypal’s API.`,
                 ],
                 display: {
-                    image: 'white-raven-2.png',
+                    image: whiteRaven2,
                 },
             },
         },
@@ -72,7 +85,7 @@ const projects = [
                     `In retrospect I would have done a lot on this project differently. It’s very frontend focused and would benefit by having a well designed service worker to handle the IndexedBD operations. This approach would also mean the prototype would more readily adapt to having a backend.`,
                 ],
                 display: {
-                    image: 'wavy.jpg',
+                    image: wavy,
                 },
             },
         },
@@ -90,27 +103,27 @@ const projects = [
                     'This prototype allows users to create named dash boards with resizable and draggable text sticky widgets. Svelte, a new framework for everyone on the team made this project interesting to work on.',
                 ],
                 display: {
-                    image: 'dashy.gif',
+                    image: dashy,
                 },
             },
         },
     },
-    {	
-        title: 'grid',	
-        repo: 'https://github.com/lily-law/grid',	
-        icons: ['npm', 'typescript'],	
-        description: 'A JavaScript grid arrays constructor',	
-        points: {	
-            'Overview': {	
-                text: [	
-                    'I made this grid constructor utility while working on implementing a sudoku engine/generator.',	
+    {
+        title: 'grid',
+        repo: 'https://github.com/lily-law/grid',
+        icons: ['npm', 'typescript'],
+        description: 'A JavaScript grid arrays constructor',
+        points: {
+            'Overview': {
+                text: [
+                    'I made this grid constructor utility while working on implementing a sudoku engine/generator.',
                     'It translates a given array into grid constructs which means you can access and edit a grid of items via rows/columns/diagonals/blocks/nths.',
                 ],
                 display: {
-                    image: 'npm.svg',
+                    image: npm,
                 },
-            }	
-        }	
+            },
+        },
     },
     {
         title: 'U Buzz Tap',
@@ -130,7 +143,7 @@ const projects = [
                     needing to store anything.`,
                 ],
                 display: {
-                    image: 'u-buzz-tap.png',
+                    image: uBuzzTap,
                 },
             },
             'The Buzz Process': {
@@ -144,7 +157,7 @@ const projects = [
                     runner ups were out by`,
                 ],
                 display: {
-                    image: 'u-buzz-tap-2.png',
+                    image: uBuzzTap2,
                 },
             },
         },
@@ -154,7 +167,8 @@ const projects = [
         link: 'https://chingu-solo-mars-rover-api.herokuapp.com/',
         repo: 'https://github.com/lily-law/chingu-solo-mars-rover-project',
         icons: ['nodejs', 'react'],
-        description: 'Web app to search and view photos taken by mars rovers. A Chingu solo project',
+        description:
+            'Web app to search and view photos taken by mars rovers. A Chingu solo project',
         points: {
             'Overview': {
                 text: [
@@ -170,7 +184,7 @@ const projects = [
                     `- validateManifestRequest checks a given rover name against a list of valid rover names`,
                 ],
                 display: {
-                    image: 'mars-photo-api.png',
+                    image: marsPhotoApi,
                 },
             },
             'Design': {
@@ -195,7 +209,7 @@ const projects = [
                     'I created this for my Chingu pre-work project. While having fun coding the workings of this site, it felt appropriate to bring a little bit of fun into the design.',
                 ],
                 display: {
-                    image: 'solo-koala-54.jpg',
+                    image: soloKoala54,
                 },
             },
         },
@@ -213,7 +227,7 @@ const projects = [
                     'Simple and reliable bit of code I use everyday. The big button makes this device, giving it an ease of use a notch above commercial devices I could find.',
                 ],
                 display: {
-                    image: 'big-button-timer.jpg',
+                    image: bigButtonTimer,
                 },
             },
         },
