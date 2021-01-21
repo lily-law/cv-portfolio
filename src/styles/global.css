@@ -1,21 +1,20 @@
-
 :root {
     --black: #000000;
     --white: #ffffff;
-    --grey-xxl: #E4E4E4;
-    --grey-xl: #B7B7B7;
-    --grey-l: #A6A6A6;
+    --grey-xxl: #e4e4e4;
+    --grey-xl: #b7b7b7;
+    --grey-l: #a6a6a6;
     --grey-m: #737373;
     --grey-d: #505050;
     --grey-xd: #464646;
     --blue-d: #000033;
-    --blue-l: #99CCFF;
-    --yellow-l: #FFFFCC;
-    --yellow-d: #E3E328;
+    --blue-l: #99ccff;
+    --yellow-l: #ffffcc;
+    --yellow-d: #e3e328;
     --pink-l: #ff99cc;
     --pink-d: #d443a1;
     --green-l: #8ec12f;
-    --green-d: #194c08; 
+    --green-d: #194c08;
     --flow-font-family: gill-sans-nova, sans-serif;
     --point-font-family: odile, serif;
     --logic-font-family: t26-carbon, monospace;
@@ -45,13 +44,15 @@ h3 {
 h4 {
     font-size: 24px;
 }
-p, li, a {
+p,
+li,
+a {
     font-size: 18px;
     line-height: 32px;
     letter-spacing: 2px;
 }
 
-@media only screen and (max-width: 820px) { 
+@media only screen and (max-width: 820px) {
     h1 {
         font-size: calc(18px + 1.95vw);
     }
@@ -64,7 +65,9 @@ p, li, a {
     h4 {
         font-size: calc(12px + 1.1vw);
     }
-    p, li, a {
+    p,
+    li,
+    a {
         font-size: calc(10px + 0.9vw);
     }
 }

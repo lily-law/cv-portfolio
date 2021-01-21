@@ -34,15 +34,15 @@ const Cv = () => {
                                 after having surgery on 2017 and I've been
                                 hooked since.
                             </p>
-                            <p>
-                                I’m driven by a love for intuitive UI.
-                            </p>
+                            <p>I’m driven by a love for intuitive UI.</p>
                             <p>
                                 I started my career freelancing as a web
                                 developer/designer at the start of 2019.
                             </p>
                             <p>
-                                During a project I’m either taking the lead or a keen participant in keeping a concise plan throughout the project’s lifecycle.
+                                During a project I’m either taking the lead or a
+                                keen participant in keeping a concise plan
+                                throughout the project’s lifecycle.
                             </p>
                         </section>
                         <section className="experience">
