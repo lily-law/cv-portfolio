@@ -178,7 +178,7 @@ const projects = [
                     `For the frontend I've kept it simple and clean. By creating a collapsible sidebar UI, development on this was quick and easy. Users are able to search for Mars rover photos, scroll through all results (pagination is automatically triggered), and click on results for a full view. A status component keeps users informed about the apps current processes, completed tasks, and any errors.`,
                 ],
                 display: {
-                    image: marsPhotoApi2,
+                    image: "mars-photo-api-2.png",
                 },
             },
         },

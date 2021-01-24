@@ -1,7 +1,31 @@
 import React, {Fragment, useState, useEffect} from 'react';
 import Icon from './icon';
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
 
 const Feature = ({feature, projects}) => {
+
+    const data = useStaticQuery(graphql`
+    query {
+        allFile(
+        filter: {
+            relativeDirectory: { eq: "projects" }
+        }
+        ) {
+        edges {
+            node {
+                base
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+        }
+    }
+    `);
+
     const [cols, setCols] = useState(1);
     const firstTab =
         projects[feature].points && Object.keys(projects[feature].points)[0];
@@ -13,13 +37,14 @@ const Feature = ({feature, projects}) => {
         setCols(findNCols());
         window.onresize = () => setCols(findNCols());
     }, []);
+
     return (
         <Fragment>
             <aside className="feature">
                 <figure>
                     {activeProject?.display?.image && (
-                        <img
-                            src={'/projects/' + activeProject.display.image}
+                        <Img 
+                            fluid={data.allFile.edges.find(image => image.node.base === activeProject.display.image)?.node.childImageSharp.fluid}
                             alt=""
                         />
                     )}
@@ -70,6 +95,12 @@ const Feature = ({feature, projects}) => {
                 }
                 figure {
                     align-self: center;
+                    width: 100%;
+                    height: 100%;
+                    display: grid;
+                    grid-template-rows: auto;
+                    grid-template-columns: 1fr;
+                    place-items: center stretch;
                 }
                 section {
                     margin: 2vw;

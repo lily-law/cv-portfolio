@@ -1,3 +1,5 @@
+const path = require(`path`);
+
 module.exports = {
     siteMetadata: {
         title: `LeafLily`,
@@ -41,6 +43,15 @@ module.exports = {
                 icon: `src/images/logo.svg`, // This path is relative to the root of the site.
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+              name: `images`,
+              path: path.join(__dirname, `src`, `images`),
+            },
+        },
+        `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`,
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,
