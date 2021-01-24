@@ -7,8 +7,9 @@ const Feature = ({feature, projects}) => {
 
     const data = useStaticQuery(graphql`
     query {
-        allFile(
+        rasterFiles :allFile (
         filter: {
+            extension: { regex: "/(jpg)|(png)|(jpeg)/" }
             relativeDirectory: { eq: "projects" }
         }
         ) {
@@ -23,6 +24,19 @@ const Feature = ({feature, projects}) => {
             }
         }
         }
+        gifAndVectorFiles: allFile(
+            filter: {
+                extension: { regex: "/(gif)|(svg)/" }
+                relativeDirectory: { eq: "projects" }
+            }
+            ) {
+            edges {
+                node {
+                    base
+                    publicURL
+                }
+            }
+            }
     }
     `);
 
@@ -43,8 +57,10 @@ const Feature = ({feature, projects}) => {
             <aside className="feature">
                 <figure>
                     {activeProject?.display?.image && (
+                        activeProject.display.image.match(/\.gif|.svg/) ?
+                        <img src={data.gifAndVectorFiles.edges.find(image => image.node.base === activeProject.display.image)?.node.publicURL} alt="" /> :
                         <Img 
-                            fluid={data.allFile.edges.find(image => image.node.base === activeProject.display.image)?.node.childImageSharp.fluid}
+                            fluid={data.rasterFiles.edges.find(image => image.node.base === activeProject.display.image)?.node.childImageSharp.fluid}
                             alt=""
                         />
                     )}
