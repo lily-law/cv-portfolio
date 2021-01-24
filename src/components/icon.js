@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import { useStaticQuery, graphql } from "gatsby";
 
 const icons = {
     js: {
@@ -164,6 +165,22 @@ const icons = {
 };
 
 const Icon = ({name, className = '', link}) => {
+    const data = useStaticQuery(graphql`
+    query {
+        allFile(
+        filter: {
+            relativeDirectory: { eq: "icons" }
+        }
+        ) {
+        edges {
+            node {
+                base
+                publicURL
+            }
+        }
+        }
+    }
+    `);
     if (icons.hasOwnProperty(name)) {
         const {img, title} = icons[name];
         let url =
@@ -172,6 +189,7 @@ const Icon = ({name, className = '', link}) => {
                 : icons[name].link
                 ? icons[name].link
                 : null;
+        const publicURL = data.allFile.edges.find(image => image.node.base === img)?.node.publicURL;
         return (
             <Fragment>
                 {link && url ? (
@@ -180,11 +198,19 @@ const Icon = ({name, className = '', link}) => {
                         className={className}
                         target="_blank"
                         rel="noreferrer">
-                        <img src={'/icons/' + img} alt={name} title={title} />
+                        <img
+                            src={publicURL}
+                            alt={name}
+                            title={title}
+                        />
                     </a>
                 ) : (
                     <figure className={className}>
-                        <img src={'/icons/' + img} alt={name} title={title} />
+                        <img 
+                            src={publicURL}
+                            alt={name}
+                            title={title}
+                        />
                     </figure>
                 )}
                 <style jsx>{`
