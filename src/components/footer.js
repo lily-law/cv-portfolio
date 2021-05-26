@@ -1,14 +1,14 @@
 import React, {Fragment} from 'react';
-import ContactForm from './contactForm';
+// import ContactForm from './contactForm';
 import Contact from './contact';
 
 const Footer = () => {
     return (
         <Fragment>
             <footer>
-                <div className="contactForm">
+               {/* { <div className="contactForm">
                     <ContactForm />
-                </div>
+                </div>} */}
                 <div className="links">
                     <Contact />
                 </div>
